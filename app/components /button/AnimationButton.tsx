@@ -6,14 +6,13 @@ import SlideArrow from "@/app/components /interactions/SlideArrow";
 import type { ButtonConfig } from "./data";
 import "tap-tone";
 import Setting from "../interactions/Setting";
+import Like from "../interactions/Like";
 
 interface AnimatedButtonProps {
   button: ButtonConfig;
 }
 
-export default function AnimatedButton({
-  button,
-}: AnimatedButtonProps) {
+export default function AnimatedButton({ button }: AnimatedButtonProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -21,22 +20,9 @@ export default function AnimatedButton({
       data-tone-tap
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-className="
-inline-flex
-items-center
-rounded-full
-border
-border-neutral-300
-bg-white
-px-7
-py-2
-transition-colors
-hover:bg-neutral-50
-dark:border-neutral-700
-dark:bg-neutral-900
-dark:text-white
-dark:hover:bg-neutral-800
-"    >
+      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 transition-all hover:bg-neutral-50
+     dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800  hover:scale-110 duration-200 "
+    >
       {button.interactionType === "slide-arrow" && (
         <SlideArrow
           hovered={hovered}
@@ -46,13 +32,12 @@ dark:hover:bg-neutral-800
         />
       )}
 
-       {button.interactionType === "setting" && (
-        <Setting
-          hovered={hovered}
-          label={button.label}
-          Icon1={button.icon1}
-          
-        />
+      {button.interactionType === "setting" && (
+        <Setting hovered={hovered} label={button.label} Icon1={button.icon1} />
+      )}
+
+       {button.interactionType === "like" && (
+        <Like hovered={hovered} label={button.label} Icon1={button.icon1} />
       )}
     </motion.button>
   );

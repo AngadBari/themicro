@@ -1,93 +1,69 @@
 
-
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
 import "tap-tone";
 
-
 import {
-  Setting07Icon
+  Like
 } from "@hugeicons/core-free-icons";
 
-
 const outfit = Outfit({
-  subsets:["latin"],
-  weight:["600"],
+  subsets: ["latin"],
+  weight: ["600"],
 });
 
-
-export default function SettingsButton(){
-
-  const [hovered,setHovered] = useState(false);
-
-
+export default function LikeButton() {
   return (
-
     <motion.button
-
       data-tone-tap
-
-      onMouseEnter={()=>setHovered(true)}
-      onMouseLeave={()=>setHovered(false)}
-
-      className="
-        inline-flex
-        items-center
-        rounded-full
-        border
-        border-neutral-300
-        bg-white
-        px-7
-        py-2
-        transition-colors
-        hover:bg-neutral-50
-        dark:border-neutral-700
-        dark:bg-neutral-900
-        dark:text-white
-        dark:hover:bg-neutral-800
-      "
-
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.96 }}
+      transition={{ duration: 0.2 }}
+      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 transition-all hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
     >
-
       <motion.div
-
-        animate={{
-          rotate:hovered ? 360 : 0
-        }}
-
+        layout
+        className="group flex items-center gap-2"
         transition={{
-          duration:1,
-          ease:"linear",
-          repeat:hovered ? Infinity : 0
+          layout: {
+            type: "spring",
+            stiffness: 500,
+            damping: 28,
+          },
         }}
-
       >
+        <motion.div
+          whileHover={{ scale: 1.15 }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 18,
+          }}
+        >
+          <HugeiconsIcon
+            icon={Like}
+            size={18}
+            className="transition-colors duration-200 group-hover:text-blue-600"
+          />
+        </motion.div>
 
-        <HugeiconsIcon
-          icon={Setting07Icon}
-          size={16}
-        />
-
+        <motion.span
+          layout
+          transition={{
+            layout: {
+              type: "spring",
+              stiffness: 500,
+              damping: 28,
+            },
+          }}
+          className={`${outfit.className} whitespace-nowrap text-[13px]`}
+        >
+          Like
+        </motion.span>
       </motion.div>
-
-
-
-      <span
-        className={`${outfit.className} text-[13px] ml-2`}
-      >
-
-        Settings
-
-      </span>
-
-
     </motion.button>
-
   );
-
 }
-

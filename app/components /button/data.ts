@@ -1,9 +1,11 @@
-import { ArrowRight02Icon, Download ,Setting07Icon} from "@hugeicons/core-free-icons";
+import { ArrowRight02Icon, Download ,Setting07Icon,Like} from "@hugeicons/core-free-icons";
+
 
 
 export type InteractionType =
   | "slide-arrow"
-  | "setting";
+  | "setting"
+  | "like";
 
 export interface ButtonConfig {
   id: number;
@@ -46,5 +48,19 @@ export const buttons:ButtonConfig[] = [
     icon1: Setting07Icon,
     icon1Name: "Setting07Icon",
   },
+
+
+  {
+    id: 3,
+    category: "Button",
+    label: "Like",
+    dis: " Like interaction",
+
+    interactionType: "like",
+
+    icon1: Like,
+    icon1Name: "Like",
+  },
+
 
 ];
