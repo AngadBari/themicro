@@ -2,11 +2,15 @@ import Image from "next/image";
 import ThemeToggle from "./components /theme/ThemeToggle";
 import NavBar from "./components /ui/NavBar";
 import Hero from "./components /ui/Hero";
+import Category from "./components /section/Category";
+import DownloadButton from "./components /ex";
 
 export default function Home() {
   return (
-     <main className="mt-30 ">
+     <main className="mt-20 ">
         <Hero/>
+        <Category/>
+        <DownloadButton/>
      </main>
   );
 }
