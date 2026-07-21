@@ -11,7 +11,7 @@ import AnimatedButton from "../button/AnimationButton";
 import CopyCode from "@/app/components /section/CopyCode";
 import { getComponentCode } from "@/app/components /CodeMaker";
 
-const buttonCode = getComponentCode(buttons[0]);
+
 
 const outfit1 = Outfit({
   subsets: ["latin"],
@@ -69,37 +69,34 @@ const Category = () => {
 
       
       <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredData.map((item) => (
-          <div
-            key={item.id}
-            className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
-          >
-           
-            <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
-              
-              <AnimatedButton button={buttons[0]} />
-            </div>
+       {filteredData.map((item) => {
+  const buttonCode = getComponentCode(item);
 
-            
-            <div className="px-2 mt-6 flex items-center justify-between">
-              <div className=" ">
-                <h2
-                  className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
-                >
-                  {item.label}
-                </h2>
+  return (
+    <div
+      key={item.id}
+      className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
+    >
+      <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
+        <AnimatedButton button={item} />
+      </div>
 
-                <p className="mt-1 text-xs text-neutral-500">
-                {item.dis}
-                </p>
-              </div>
+      <div className="mt-6 flex items-center justify-between px-2">
+        <div>
+          <h2 className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}>
+            {item.label}
+          </h2>
 
-              <div className="">
-                <CopyCode code={buttonCode} />
-              </div>
-            </div>
-          </div>
-        ))}
+          <p className="mt-1 text-xs text-neutral-500">
+            {item.dis}
+          </p>
+        </div>
+
+        <CopyCode code={buttonCode} />
+      </div>
+    </div>
+  );
+})}
       </div>
     </section>
   );

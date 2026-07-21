@@ -1,15 +1,16 @@
 
+
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
 import "tap-tone";
 
+
 import {
-  Download,
-  ArrowRight02Icon
+  Setting07Icon
 } from "@hugeicons/core-free-icons";
 
 
@@ -19,221 +20,74 @@ const outfit = Outfit({
 });
 
 
-export default function DownloadButton(){
+export default function SettingsButton(){
 
   const [hovered,setHovered] = useState(false);
 
 
   return (
 
-<motion.button
+    <motion.button
 
-  data-tone-tap
+      data-tone-tap
 
-  onMouseEnter={() => setHovered(true)}
-  onMouseLeave={() => setHovered(false)}
+      onMouseEnter={()=>setHovered(true)}
+      onMouseLeave={()=>setHovered(false)}
 
-  className="
-    inline-flex
-    items-center
-    rounded-full
-    border
-    border-neutral-300
-    bg-white
-    px-7
-    py-2
-  "
+      className="
+        inline-flex
+        items-center
+        rounded-full
+        border
+        border-neutral-300
+        bg-white
+        px-7
+        py-2
+        transition-colors
+        hover:bg-neutral-50
+        dark:border-neutral-700
+        dark:bg-neutral-900
+        dark:text-white
+        dark:hover:bg-neutral-800
+      "
 
->
+    >
 
+      <motion.div
 
-<motion.div
+        animate={{
+          rotate:hovered ? 360 : 0
+        }}
 
-layout
+        transition={{
+          duration:1,
+          ease:"linear",
+          repeat:hovered ? Infinity : 0
+        }}
 
-className="flex items-center gap-3"
+      >
 
-transition={{
-  layout:{
-    type:"spring",
-    stiffness:500,
-    damping:28
-  }
-}}
+        <HugeiconsIcon
+          icon={Setting07Icon}
+          size={16}
+        />
 
->
+      </motion.div>
 
 
-<AnimatePresence mode="popLayout">
 
-{!hovered && (
+      <span
+        className={`${outfit.className} text-[13px] ml-2`}
+      >
 
-<motion.div
+        Settings
 
-key="left-icon"
+      </span>
 
-layout
 
-initial={{
- opacity:0,
- x:-12,
- scale:0.7
-}}
+    </motion.button>
 
-animate={{
- opacity:1,
- x:12,
- scale:1
-}}
-
-exit={{
- opacity:0,
- x:-12,
- scale:0.7
-}}
-
-transition={{
- type:"spring",
- stiffness:650,
- damping:22
-}}
-
-className="mr-2 flex items-center"
-
->
-
-
-<motion.div
-
-animate={{
- scale:1
-}}
-
-transition={{
- type:"spring",
- stiffness:500,
- damping:18
-}}
-
->
-
-<HugeiconsIcon
-
-icon={Download}
-
-size={16}
-
-/>
-
-</motion.div>
-
-
-</motion.div>
-
-)}
-
-</AnimatePresence>
-
-
-
-<motion.span
-
-layout
-
-transition={{
- layout:{
-  type:"spring",
-  stiffness:500,
-  damping:28
- }
-}}
-
-className={`${outfit.className} text-[13px] whitespace-nowrap`}
->
-
-Download
-
-</motion.span>
-
-
-
-<AnimatePresence mode="popLayout">
-
-{hovered && (
-
-<motion.div
-
-key="right-icon"
-
-layout
-
-initial={{
- opacity:0,
- x:12,
- scale:0.7
-}}
-
-animate={{
- opacity:1,
- x:0,
- scale:1
-}}
-
-exit={{
- opacity:0,
- x:12,
- scale:0.7
-}}
-
-transition={{
- type:"spring",
- stiffness:650,
- damping:22
-}}
-
-className="ml-2 flex items-center"
-
->
-
-
-<motion.div
-
-animate={{
- scale:1
-}}
-
-transition={{
- type:"spring",
- stiffness:500,
- damping:18
-}}
-
->
-
-<HugeiconsIcon
-
-icon={ArrowRight02Icon}
-
-size={16}
-
-/>
-
-</motion.div>
-
-
-</motion.div>
-
-)}
-
-</AnimatePresence>
-
-
-</motion.div>
-
-
-</motion.button>
-
-
-);
+  );
 
 }
+
