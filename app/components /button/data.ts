@@ -1,11 +1,12 @@
-import { ArrowRight02Icon, Download ,Setting07Icon,Like} from "@hugeicons/core-free-icons";
+import { ArrowRight02Icon, Download ,Setting07Icon,Like,SentIcon,CircleCheckBigIcon} from "@hugeicons/core-free-icons";
 
 
 
 export type InteractionType =
   | "slide-arrow"
   | "setting"
-  | "like";
+  | "like"
+  | "send" 
 
 export interface ButtonConfig {
   id: number;
@@ -62,5 +63,19 @@ export const buttons:ButtonConfig[] = [
     icon1Name: "Like",
   },
 
+   {
+    id: 4,
+    category: "Button",
+    label: "Send",
+    dis: " Send interaction",
+
+    interactionType: "send",
+
+    icon1: CircleCheckBigIcon,
+    icon1Name: "CircleCheckBigIcon",
+
+    
+    
+  },
 
 ];

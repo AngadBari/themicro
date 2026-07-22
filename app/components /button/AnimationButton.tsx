@@ -7,6 +7,7 @@ import type { ButtonConfig } from "./data";
 import "tap-tone";
 import Setting from "../interactions/Setting";
 import Like from "../interactions/Like";
+import Send from "../interactions/Send";
 
 interface AnimatedButtonProps {
   button: ButtonConfig;
@@ -38,6 +39,10 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
 
        {button.interactionType === "like" && (
         <Like hovered={hovered} label={button.label} Icon1={button.icon1} />
+      )}
+
+       {button.interactionType === "send" && (
+        <Send hovered={hovered} label={button.label} Icon1={button.icon1} />
       )}
     </motion.button>
   );

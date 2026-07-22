@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { Outfit } from "next/font/google";
+import "tap-tone"
 
 const outfit1 = Outfit({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function CopyCode({ code }: CopyButtonProps) {
 
   return (
     <button
+       data-tone-success
       onClick={handleCopy}
       className={` ${outfit1.className} flex items-center gap-2 text-[13px]`}
     >

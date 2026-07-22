@@ -1,36 +1,34 @@
 
- "use client";
- import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
+import type { IconSvgElement } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-import "tap-tone";
-
-import {
-        CircleCheckBigIcon,
-        
-    } from "@hugeicons/core-free-icons";
 
 
-            const outfit = Outfit({
-            subsets:["latin"],
-            weight:["600"],
-            });
 
 
-        export default function SendButton(){
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+});
 
-         const [hovered,setHovered] = useState(false);
+interface Props {
+  hovered: boolean;
+  label: string;
+  Icon1: IconSvgElement;
+  
+}
 
-
-             return (
-    <motion.button
-      data-tone-tap
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className=" inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 transition-colors hover:bg-neutral-50 dark:border-neutral-700   dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800 hover:scale-110 duration-200 "
-    >
-     <motion.div
+export default function Send({
+  hovered,
+  label,
+  Icon1,
+  
+}: Props) {
+  return (
+    <motion.div
      
       layout
       className="flex gap-2 items-center"
@@ -81,7 +79,7 @@ import {
               }}
             >
               <HugeiconsIcon
-                icon={CircleCheckBigIcon}
+                icon={Icon1}
                 size={16}
               />
             </motion.div>
@@ -99,9 +97,9 @@ import {
             damping: 28,
           },
         }}
-         className={`${outfit.className} whitespace-nowrap text-[13px]`}
+        className={ `${outfit.className} text-[13px]  whitespace-nowrap `}
       >
-        Send
+        {label}
       </motion.span>
 
       {/* Right Icon */}
@@ -143,7 +141,7 @@ import {
               }}
             >
               <HugeiconsIcon
-                icon={CircleCheckBigIcon}
+                icon={Icon1}
                 size={16}
                 className=" text-green-500"
               />
@@ -152,7 +150,5 @@ import {
         )}
       </AnimatePresence>
     </motion.div>
-
-    </motion.button>
   );
 }
