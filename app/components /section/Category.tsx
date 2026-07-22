@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Outfit } from "next/font/google";
-
+import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { GithubIcon } from "@hugeicons/core-free-icons";
 import { buttons } from "@/app/components /button/data";
@@ -61,20 +61,37 @@ const Category = () => {
           >
             <HugeiconsIcon icon={GithubIcon} size={18} strokeWidth={1.8} />
             <span className={`${outfit1.className} text-[13px]`}>
-              GitHub Repo
+               Star on GitHub
             </span>
           </Link>
         </div>
       </div>
 
       
-      <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div 
+      key={selected}
+         initial={{opacity:0,y:40}}
+         animate={{opacity:1,y:0}}
+         exit={{ opacity: 0, y: -20 }}
+    transition={{
+      duration: 0.3,
+      ease: "easeOut",
+    }}
+
+      className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
        {filteredData.map((item) => {
   const buttonCode = getComponentCode(item);
 
   return (
-    <div
+    <motion.div
       key={item.id}
+      initial={{opacity:0,y:20}}
+         animate={{opacity:1,y:0}}
+         transition={{
+      duration: 0.35,
+      delay:item.id*0.1,
+      ease: "easeOut",
+    }}
       className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
     >
       <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
@@ -94,10 +111,10 @@ const Category = () => {
 
         <CopyCode code={buttonCode} />
       </div>
-    </div>
+    </motion.div>
   );
 })}
-      </div>
+      </motion.div>
     </section>
   );
 };

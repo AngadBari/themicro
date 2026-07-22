@@ -23,6 +23,7 @@ export default function Like({
 }: Props) {
   return (
     <motion.div
+    data-tone-press
       layout
       className="flex items-center group "
       transition={{

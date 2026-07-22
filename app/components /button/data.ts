@@ -24,20 +24,21 @@ export interface ButtonConfig {
 }
 
 export const buttons:ButtonConfig[] = [
-{
-  id:1,
-  category:"Button",
-  label:"  Download for Mac",
-  dis:" Slide arrow interaction",
+ {
+    id: 1,
+    category: "Button",
+    label: "Send",
+    dis: " Send interaction",
 
-  interactionType:"slide-arrow",
+    interactionType: "send",
 
-  icon1:Download,
-  icon1Name:"Download",
+    icon1: CircleCheckBigIcon,
+    icon1Name: "CircleCheckBigIcon",
 
-  icon2:ArrowRight02Icon,
-  icon2Name:"ArrowRight02Icon"
-},
+    
+    
+  },
+
 {
     id: 2,
     category: "Button",
@@ -63,19 +64,20 @@ export const buttons:ButtonConfig[] = [
     icon1Name: "Like",
   },
 
-   {
-    id: 4,
-    category: "Button",
-    label: "Send",
-    dis: " Send interaction",
+  {
+  id:4,
+  category:"Button",
+  label:"  Download for Mac",
+  dis:" Slide arrow interaction",
 
-    interactionType: "send",
+  interactionType:"slide-arrow",
 
-    icon1: CircleCheckBigIcon,
-    icon1Name: "CircleCheckBigIcon",
+  icon1:Download,
+  icon1Name:"Download",
 
-    
-    
-  },
+  icon2:ArrowRight02Icon,
+  icon2Name:"ArrowRight02Icon"
+},
+  
 
 ];

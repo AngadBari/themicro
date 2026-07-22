@@ -185,7 +185,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-import "tap-tone";
+
 
 
 import {
@@ -204,7 +204,7 @@ export default function ${button.label.replace(/\s+/g, "")}Button(){
   const [hovered,setHovered] = useState(false);
   return (
     <motion.button
-     data-tone-tap
+     
       onMouseEnter={()=>setHovered(true)}
       onMouseLeave={()=>setHovered(false)}
       className=" inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 transition-all hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800 hover:scale-110 duration-200
@@ -248,7 +248,7 @@ export default function ${button.label.replace(/\s+/g, "")}Button(){
 import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-import "tap-tone";
+
 
 import {
   ${button.icon1Name}
@@ -262,7 +262,7 @@ const outfit = Outfit({
 export default function ${button.label.replace(/\s+/g, "")}Button() {
   return (
     <motion.button
-      data-tone-tap
+     
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.96 }}
       transition={{ duration: 0.2 }}

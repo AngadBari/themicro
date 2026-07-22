@@ -41,7 +41,7 @@ const Hero = () => {
 
         <button className=" inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-8 py-2 text-neutral-900 transition hover:bg-neutral-200">
           <HugeiconsIcon icon={CodeXmlIcon} size={18} strokeWidth={1.8} />
-          <span className={`${outfit2.className} text-[13px]`}>GitHub Repo</span>
+          <span className={`${outfit2.className} text-[13px]`}>Components</span>
         </button>
       </div>
     </main>

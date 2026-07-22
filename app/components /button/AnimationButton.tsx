@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SlideArrow from "@/app/components /interactions/SlideArrow";
 import type { ButtonConfig } from "./data";
-import "tap-tone";
+
 import Setting from "../interactions/Setting";
 import Like from "../interactions/Like";
 import Send from "../interactions/Send";
@@ -18,7 +18,7 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
 
   return (
     <motion.button
-      data-tone-tap
+      
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 transition-all hover:bg-neutral-50

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import type { IconSvgElement } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-
+import "tap-tone"
 
 
 
@@ -28,7 +28,7 @@ export default function SlideArrow({
 }: Props) {
   return (
     <motion.div
-     
+     data-tone-tap
       layout
       className="flex gap-3 items-center"
       transition={{
