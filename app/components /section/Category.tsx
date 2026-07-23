@@ -84,14 +84,14 @@ const Category = () => {
 
   return (
     <motion.div
-      key={item.id}
-      initial={{opacity:0,y:20}}
-         animate={{opacity:1,y:0}}
-         transition={{
-      duration: 0.35,
-      delay:item.id*0.1,
-      ease: "easeOut",
-    }}
+    //   key={item.id}
+    //   initial={{opacity:0,y:20}}
+    //      animate={{opacity:1,y:0}}
+    //      transition={{
+    //   duration: 0.35,
+    //   delay:item.id*0.1,
+    //   ease: "easeOut",
+    // }}
       className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
     >
       <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">

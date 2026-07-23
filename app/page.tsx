@@ -6,11 +6,13 @@ import Category from "./components /section/Category";
 import DownloadforMacButton from "./components /ex";
 
 
+
 export default function Home() {
   return (
      <main className="mt-20 ">
         <Hero/>
         <Category/>
+        
        <DownloadforMacButton/>
      </main>
   );

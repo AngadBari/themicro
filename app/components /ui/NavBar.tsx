@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import ThemeToggle from "../theme/ThemeToggle";
+
 import { Outfit } from "next/font/google";
 
 import { usePathname } from "next/navigation";
+import ThemeToggle from "../theme/ThemeToggle";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -44,7 +45,7 @@ export default function NavBar() {
             </Link>
 
             <Link
-              href="/how-to-use"
+              href="/cli"
               className={`rounded-full px-3 py-2 transition-colors ${
                 pathname === "/how-to-use"
                   ? "bg-gray-100 text-black dark:bg-neutral-800 dark:text-white"
@@ -155,7 +156,7 @@ export default function NavBar() {
           </a>
 
           <div className="">
-            <ThemeToggle />
+            <ThemeToggle/>
           </div>
 
         </div>

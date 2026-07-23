@@ -1,4 +1,4 @@
-import { ArrowRight02Icon, Download ,Setting07Icon,Like,SentIcon,CircleCheckBigIcon} from "@hugeicons/core-free-icons";
+import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon} from "@hugeicons/core-free-icons";
 
 
 
@@ -28,7 +28,7 @@ export const buttons:ButtonConfig[] = [
     id: 1,
     category: "Button",
     label: "Send",
-    dis: " Send interaction",
+    dis: " Send transition ",
 
     interactionType: "send",
 
@@ -43,7 +43,7 @@ export const buttons:ButtonConfig[] = [
     id: 2,
     category: "Button",
     label: "Settings",
-    dis: "Rotate interaction",
+    dis: "Rotate transition",
 
     interactionType: "setting",
 
@@ -56,7 +56,7 @@ export const buttons:ButtonConfig[] = [
     id: 3,
     category: "Button",
     label: "Like",
-    dis: " Like interaction",
+    dis: " Like transition",
 
     interactionType: "like",
 
@@ -68,7 +68,7 @@ export const buttons:ButtonConfig[] = [
   id:4,
   category:"Button",
   label:"  Download for Mac",
-  dis:" Slide arrow interaction",
+  dis:" Slide arrow transition",
 
   interactionType:"slide-arrow",
 
