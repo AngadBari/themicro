@@ -34,7 +34,7 @@ export default function Like({
         },
       }}
     >
-      {/* Settings Icon */}
+     
       <motion.div
         className="mr-2 flex items-center "
        

@@ -4,6 +4,7 @@ import NavBar from "./components /ui/NavBar";
 import Hero from "./components /ui/Hero";
 import Category from "./components /section/Category";
 import DownloadforMacButton from "./components /ex";
+import GithubStars from "./components /GithubStars";
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
         <Category/>
         
        <DownloadforMacButton/>
+       <GithubStars/>
      </main>
   );
 }

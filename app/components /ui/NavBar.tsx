@@ -7,6 +7,7 @@ import { Outfit } from "next/font/google";
 
 import { usePathname } from "next/navigation";
 import ThemeToggle from "../theme/ThemeToggle";
+import GithubStars from "../GithubStars";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -59,12 +60,19 @@ export default function NavBar() {
 
        
         <div className="flex items-center gap-3">
-          <a href="https://github.com/AngadBari">
+  
+
+          <a href="https://github.com/AngadBari/themicro">
+
+               
             <motion.div
-              className="bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md  border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200"
+              className="bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md  border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex gap-2 justify-center items-center"
               initial="rest"
               whileHover="hover"
             >
+
+              
+
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -113,6 +121,11 @@ export default function NavBar() {
                   }}
                 />
               </motion.svg>
+             
+             <div className="">
+                <GithubStars/>
+               </div>
+
             </motion.div>
           </a>
 

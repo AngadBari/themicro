@@ -1,4 +1,4 @@
-import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon} from "@hugeicons/core-free-icons";
+import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon,GithubIcon,StarIcon} from "@hugeicons/core-free-icons";
 
 
 
@@ -7,6 +7,7 @@ export type InteractionType =
   | "setting"
   | "like"
   | "send" 
+  | "star"
 
 export interface ButtonConfig {
   id: number;
@@ -79,5 +80,19 @@ export const buttons:ButtonConfig[] = [
   icon2Name:"ArrowRight02Icon"
 },
   
+  {
+  id:5,
+  category:"Button",
+  label:" Star on GitHub",
+  dis:" Slide arrow transition",
+
+  interactionType:"star",
+
+  icon1:GithubIcon,
+  icon1Name:"GithubIcon",
+
+  icon2:StarIcon,
+  icon2Name:"StarIcon"
+},
 
 ];

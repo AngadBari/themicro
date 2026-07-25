@@ -8,6 +8,7 @@ import type { ButtonConfig } from "./data";
 import Setting from "../interactions/Setting";
 import Like from "../interactions/Like";
 import Send from "../interactions/Send";
+import GitHubStar from "../interactions/GitHubStar";
 
 interface AnimatedButtonProps {
   button: ButtonConfig;
@@ -43,6 +44,10 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
 
        {button.interactionType === "send" && (
         <Send hovered={hovered} label={button.label} Icon1={button.icon1} />
+      )}
+
+      {button.interactionType === "star" && (
+        <GitHubStar hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
       )}
     </motion.button>
   );
