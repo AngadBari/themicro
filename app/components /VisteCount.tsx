@@ -8,7 +8,7 @@ export default function ViewCounter() {
 
   useEffect(() => {
     fetch(
-      "https://page-views-api.ratneshc.com/api/v1/views?site=the-micro.vercel.app.app&path=/"
+      "https://page-views-api.ratneshc.com/api/v1/views?site=the-micro.vercel.app&path=/"
     )
       .then((res) => res.json())
       .then((data) => setViews(data.views))

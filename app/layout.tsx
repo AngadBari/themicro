@@ -40,7 +40,7 @@ export default function RootLayout({
         </Providers>
         <Script
           src="https://page-views-api.ratneshc.com/script"
-          data-site="https://the-micro.vercel.app/" // Replace with your domain
+          data-site="the-micro.vercel.app" // Replace with your domain
           data-path="/"
           strategy="afterInteractive"
         />
