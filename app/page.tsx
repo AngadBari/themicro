@@ -14,8 +14,7 @@ export default function Home() {
         <Hero/>
         <Category/>
         
-       <DownloadforMacButton/>
-       <GithubStars/>
+       
      </main>
   );
 }

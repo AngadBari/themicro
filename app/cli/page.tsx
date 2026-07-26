@@ -47,7 +47,7 @@ const Cli = () => {
   Back to Components
   </Link>
 
-    <section className="mx-auto w-full mt-10 max-w-3xl px-4">
+    <section className="mx-auto w-full mt-10 max-w-3xl px-4 mb-10">
 
       
 

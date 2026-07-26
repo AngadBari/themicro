@@ -20,7 +20,7 @@ interface Props {
   Icon2: IconSvgElement;
 }
 
-export default function GitHubStar({
+export default function Submit({
   hovered,
   label,
   Icon1,
@@ -86,8 +86,23 @@ export default function GitHubStar({
         )}
       </AnimatePresence>
 
+      {/* Label */}
+      <motion.span
+        layout
+        transition={{
+          layout: {
+            type: "spring",
+            stiffness: 500,
+            damping: 28,
+          },
+        }}
+        className={ `${outfit.className} text-[13px]  whitespace-nowrap `}
+      >
+        {label}
+      </motion.span>
 
-       <AnimatePresence mode="popLayout">
+      {/* Right Icon */}
+      <AnimatePresence mode="popLayout">
         {hovered && (
           <motion.div
             key="right-icon"
@@ -127,31 +142,12 @@ export default function GitHubStar({
               <HugeiconsIcon
                 icon={Icon2}
                 size={16}
-                fill=" yellow"
-                
+                className="text-green-400"
               />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Label */}
-      <motion.span
-        layout
-        transition={{
-          layout: {
-            type: "spring",
-            stiffness: 500,
-            damping: 28,
-          },
-        }}
-        className={ `${outfit.className} text-[13px]  whitespace-nowrap `}
-      >
-        {label}
-      </motion.span>
-
-      {/* Right Icon */}
-     
     </motion.div>
   );
 }
