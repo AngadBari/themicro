@@ -6,6 +6,7 @@ import { Outfit } from "next/font/google";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { GithubIcon, CodeXmlIcon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
+import ViewCounter from "../VisteCount";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -92,6 +93,10 @@ const Hero = () => {
           </span>
         </Link>
       </motion.div>
+
+        <div className="mt-8">
+          <ViewCounter/>
+        </div>
     </motion.main>
   );
 };
