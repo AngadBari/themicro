@@ -54,6 +54,8 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
        {button.interactionType === "submit" && (
         <Submit hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
       )}
+
+      
     </motion.button>
   );
 }

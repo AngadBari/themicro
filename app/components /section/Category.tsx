@@ -10,34 +10,49 @@ import { GithubIcon } from "@hugeicons/core-free-icons";
 import { buttons } from "@/app/components /button/data";
 import AnimatedButton from "../button/AnimationButton";
 import CopyCode from "@/app/components /section/CopyCode";
-import { getComponentCode } from "@/app/components /CodeMaker";
+import { getComponentCode } from "@/app/components /CodeMakerbtn";
+import { cards } from "../card/data";
+import CardAnimation from "../card/CarouselAnimation";
+import { getComponentCodeCousel } from "../CodeMakerCousel";
+
 
 const outfit1 = Outfit({
   subsets: ["latin"],
   weight: ["600"],
 });
 
-const categories = ["All", "Button"];
 
-const data = buttons;
+const categories = ["Button", "Carousel"];
+
+const data = [...buttons, ...cards];
+
 
 const Category = () => {
-  const [selected, setSelected] = useState("All");
 
-  const filteredData =
-    selected === "All"
-      ? data
-      : data.filter((item) => item.category === selected);
+  const [selected, setSelected] = useState("Button");
+
+
+  const filteredData = data.filter(
+    (item) => item.category === selected
+  );
+
 
   return (
     <section className="mx-auto mt-20 w-full max-w-7xl px-4 py-8">
+
+
       <div
         id="comp"
         className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between"
       >
+
+
         {/* Categories */}
+
         <div className="flex flex-wrap gap-3">
+
           {categories.map((category) => (
+
             <button
               key={category}
               onClick={() => setSelected(category)}
@@ -47,71 +62,201 @@ const Category = () => {
                   : "text-gray-500 hover:bg-gray-100 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-white"
               }`}
             >
+
               {category}
+
             </button>
+
           ))}
+
         </div>
 
+
+
         {/* GitHub Button */}
+
         <div className={`flex items-center gap-3 ${outfit1.className}`}>
+
           <Link
             href="https://github.com/AngadBari/themicro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-8 py-2 text-neutral-900 transition hover:bg-neutral-200"
           >
-            <HugeiconsIcon icon={GithubIcon} size={18} strokeWidth={1.8} />
+
+            <HugeiconsIcon
+              icon={GithubIcon}
+              size={18}
+              strokeWidth={1.8}
+            />
+
+
             <span className={`${outfit1.className} text-[13px]`}>
               Star on GitHub
             </span>
+
+
           </Link>
+
         </div>
+
+
       </div>
 
-      <motion.div
-        key={selected}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{
-          duration: 0.3,
-          ease: "easeOut",
-        }}
-        className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3"
+
+
+
+
+      {/* Dynamic Grid */}
+
+      <div
+        className={
+          selected === "Button"
+            ? "mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            : "mx-auto grid max-w-5xl gap-6 sm:grid-cols-1 lg:grid-cols-2"
+        }
       >
+
+
         {filteredData.map((item) => {
-          const buttonCode = getComponentCode(item);
 
-          return (
-            <motion.div
-              key={item.id}
-              className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
-            >
-              <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
-                <AnimatedButton button={item} />
-              </div>
 
-              <div className="mt-6 flex items-center justify-between px-2">
-                <div>
+          // Button Card
+
+          if ("icon1" in item && item.category === "Button") {
+
+
+            const buttonCode = getComponentCode(item);
+
+
+            return (
+
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
+                className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
+              >
+
+
+                <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
+
+                  <AnimatedButton button={item} />
+
+                </div>
+
+
+
+                <div className="mt-6 flex items-center justify-between px-2">
+
+
+                  <div>
+
+                    <h2
+                      className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
+                    >
+
+                      {item.label}
+
+                    </h2>
+
+
+                    <p className="mt-1 text-xs text-neutral-500">
+                      {item.dis}
+                    </p>
+
+
+                  </div>
+
+
+
+                  <CopyCode code={buttonCode} />
+
+
+                </div>
+
+
+              </motion.div>
+
+            );
+
+          }
+
+
+
+
+
+          // Carousel Card
+
+          if ("title" in item && item.category === "Carousel") {
+
+         const buttonCode = getComponentCodeCousel(item);
+         
+            return (
+
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-[#181818]"
+              >
+
+
+                <CardAnimation card={item} />
+
+
+
+                <div className="mt-6 flex justify-between">
+                  <div className="">
                   <h2
                     className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
                   >
-                    {item.label}
+
+                    {item.title}
+
                   </h2>
+
 
                   <p className="mt-1 text-xs text-neutral-500">
                     {item.dis}
                   </p>
+                  </div>
+
+                   <CopyCode code={buttonCode} />
+
+
                 </div>
 
-                <CopyCode code={buttonCode} />
-              </div>
-            </motion.div>
-          );
+
+              </motion.div>
+
+            );
+
+          }
+
+
+          return null;
+
+
         })}
-      </motion.div>
+
+
+      </div>
+
+
     </section>
   );
 };
+
 
 export default Category;
