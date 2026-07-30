@@ -30,6 +30,12 @@ export type InteractionType =
     |"Support"
     |"Like"
     |"Dislike"
+    |"Dollar"
+    |"Daimond"
+    |"Rupees"
+    |"Qr"
+    |"Chat"
+    |"PhoneCall"
 
 export interface IconConfig {
     id: number;
@@ -272,6 +278,57 @@ export const icons: IconConfig[] = [
 
         interactionType: "Dislike",
     },
+
+        {
+        id: 32,
+        category: "Icons",
+        label: "Doller",
+
+        interactionType: "Dollar",
+    },
+
+       {
+        id: 33,
+        category: "Icons",
+        label: "Daimond",
+
+        interactionType: "Daimond",
+    },
+
+      {
+        id: 33,
+        category: "Icons",
+        label: "Rupees",
+
+        interactionType: "Rupees",
+    },
+
+
+     {
+        id: 34,
+        category: "Icons",
+        label: "QR",
+
+        interactionType: "Qr",
+    },
+
+     {
+        id: 35,
+        category: "Icons",
+        label: "Chat",
+
+        interactionType: "Chat",
+    },
+
+      {
+        id: 36,
+        category: "Icons",
+        label: "Phone-Call",
+
+        interactionType: "PhoneCall",
+    },
+
+
 
 
    

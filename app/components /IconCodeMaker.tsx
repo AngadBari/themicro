@@ -2812,7 +2812,7 @@ import { motion } from "framer-motion";
 const LikeIcon = () => {
   return (
     <motion.div
-      className="bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      className=" h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
       initial="rest"
       whileHover="hover"
     >
@@ -2882,7 +2882,7 @@ import { motion } from "framer-motion";
 const DislikeIcon = () => {
   return (
     <motion.div
-      className="bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      className=" h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
       initial="rest"
       whileHover="hover"
     >
@@ -2941,6 +2941,472 @@ export default DislikeIcon;
 `
 ,
 
+Doller:`
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const DollarCircleIcon = () => {
+  return (
+    <motion.div
+      className=" h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      initial="rest"
+      whileHover="hover"
+    >
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        {/* Circle */}
+        <motion.path
+          d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+          strokeLinecap="round"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.7,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Dollar */}
+        <motion.path
+          d="M14.7102 10.0611C14.6111 9.29844 13.7354 8.06622 12.1608 8.06619C10.3312 8.06616 9.56136 9.07946 9.40515 9.58611C9.16145 10.2638 9.21019 11.6571 11.3547 11.809C14.0354 11.999 15.1093 12.3154 14.9727 13.956C14.836 15.5965 13.3417 15.951 12.1608 15.9129C10.9798 15.875 9.04764 15.3325 8.97266 13.8733M11.9734 6.99805V8.06982M11.9734 15.9031V16.998"
+          strokeLinecap="round"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.8,
+                delay: 0.15,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+      </motion.svg>
+    </motion.div>
+  );
+};
+
+export default DollarCircleIcon;
+
+`
+,
+
+Daimond:`
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const DaimondIco = () => {
+  return (
+    <motion.div
+      className=" h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      initial="rest"
+      whileHover="hover"
+    >
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        {/* Tag */}
+        <motion.path
+          d="M5.78223 4.18192C6.43007 3.68319 6.754 3.43383 7.12788 3.27323C7.29741 3.20041 7.47367 3.14158 7.65459 3.09741C8.0536 3 8.4767 3 9.32289 3H14.6771C15.5233 3 15.9464 3 16.3454 3.09741C16.5263 3.14158 16.7026 3.20041 16.8721 3.27323C17.246 3.43383 17.5699 3.68319 18.2178 4.18192C20.3644 5.83448 21.4378 6.66077 21.8057 7.73078C21.9694 8.20673 22.0305 8.70728 21.9858 9.20461C21.8852 10.3227 21.0379 11.346 19.3433 13.3925L15.3498 18.2153C13.8126 20.0718 13.044 21 12 21C10.956 21 10.1874 20.0718 8.65018 18.2153L4.65671 13.3925C2.96208 11.346 2.11476 10.3227 2.0142 9.20461C1.96947 8.70728 2.03064 8.20673 2.1943 7.73078C2.56224 6.66077 3.63557 5.83448 5.78223 4.18192Z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.8,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Line */}
+        <motion.path
+          d="M10 8.5H14"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.4,
+                delay: 0.7,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+      </motion.svg>
+    </motion.div>
+  );
+};
+
+export default DaimondIco;
+
+`
+,
+
+Rupees:`
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const RupeeIco= () => {
+  return (
+    <motion.div
+      className=" h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      initial="rest"
+      whileHover="hover"
+    >
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* Rupee Symbol */}
+        <motion.path
+          d="M6 3H9C11.7614 3 14 5.23858 14 8C14 10.7614 11.7614 13 9 13C7.75179 13 7.12769 13 6.86036 13.2016C6.53165 13.4496 6.38851 13.8737 6.49971 14.2701C6.59015 14.5925 7.08659 14.9707 8.07944 15.7272L15 21"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.8,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Top Line */}
+        <motion.path
+          d="M6 3H18"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.35,
+                delay: 0.2,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Middle Line */}
+        <motion.path
+          d="M6 8H18"
+          variants={{
+            rest: {
+              pathLength: 1,
+            },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.35,
+                delay: 0.4,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+      </motion.svg>
+    </motion.div>
+  );
+};
+
+export default RupeeIco;
+
+`
+,
+
+Qr:`
+
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const QrCodeIco = () => {
+  return (
+    <motion.div
+      className="h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      initial="rest"
+      whileHover="hover"
+    >
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* Top Left */}
+        <motion.path
+          d="M6.79289 6.79289C6.5 7.08579 6.5 7.55719 6.5 8.5C6.5 9.44281 6.5 9.91421 6.79289 10.2071C7.08579 10.5 7.55719 10.5 8.5 10.5C9.44281 10.5 9.91421 10.5 10.2071 10.2071C10.5 9.91421 10.5 9.44281 10.5 8.5C10.5 7.55719 10.5 7.08579 10.2071 6.79289C9.91421 6.5 9.44281 6.5 8.5 6.5C7.55719 6.5 7.08579 6.5 6.79289 6.79289Z"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: { duration: 0.35, ease: "easeInOut" },
+            },
+          }}
+        />
+
+        {/* Top Right */}
+        <motion.path
+          d="M13.5 10.5C14.4428 10.5 14.9142 10.5 15.2071 10.2071C15.5 9.91421 15.5 9.44281 15.5 8.5C15.5 7.55719 15.5 7.08579 15.7929 6.79289C16.0858 6.5 16.5572 6.5 17.5 6.5"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.35,
+                delay: 0.1,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Bottom Left */}
+        <motion.path
+          d="M6.5 13.5H8.5C9.44281 13.5 9.91421 13.5 10.2071 13.7929C10.5 14.0858 10.5 14.5572 10.5 15.5V17.5"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.35,
+                delay: 0.2,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Dot */}
+        <motion.path
+          d="M6.875 17.25H6.75M7 17.25C7 17.3881 6.88807 17.5 6.75 17.5C6.61193 17.5 6.5 17.3881 6.5 17.25C6.5 17.1119 6.61193 17 6.75 17C6.88807 17 7 17.1119 7 17.25Z"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.25,
+                delay: 0.3,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Bottom Right */}
+        <motion.path
+          d="M13.7929 13.7929C13.5 14.0858 13.5 14.5572 13.5 15.5C13.5 16.4428 13.5 16.9142 13.7929 17.2071C14.0858 17.5 14.5572 17.5 15.5 17.5C16.4428 17.5 16.9142 17.5 17.2071 17.2071C17.5 16.9142 17.5 16.4428 17.5 15.5C17.5 14.5572 17.5 14.0858 17.2071 13.7929C16.9142 13.5 16.4428 13.5 15.5 13.5C14.5572 13.5 14.0858 13.5 13.7929 13.7929Z"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.35,
+                delay: 0.4,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Outer Border */}
+        <motion.path
+          d="M6.5 21.5C6.03563 21.5 5.80344 21.5 5.60812 21.478C3.98545 21.2952 2.70484 20.0145 2.52201 18.3919C2.5 18.1966 2.5 17.9644 2.5 17.5M17.5 21.5C17.9644 21.5 18.1966 21.5 18.3919 21.478C20.0145 21.2952 21.2952 20.0145 21.478 18.3919C21.5 18.1966 21.5 17.9644 21.5 17.5M6.5 2.5C6.03563 2.5 5.80344 2.5 5.60812 2.52201C3.98545 2.70484 2.70484 3.98545 2.52201 5.60812C2.5 5.80344 2.5 6.03563 2.5 6.5M17.5 2.5C17.9644 2.5 18.1966 2.5 18.3919 2.52201C20.0145 2.70484 21.2952 3.98545 21.478 5.60812C21.5 5.80344 21.5 6.03563 21.5 6.5"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.6,
+                delay: 0.5,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+      </motion.svg>
+    </motion.div>
+  );
+};
+
+export default QrCodeIco;
+
+`
+,
+
+Chat:`
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const ChatIco = () => {
+  return (
+    <motion.div
+      className="h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      initial="rest"
+      whileHover="hover"
+    >
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* Chat Bubble */}
+        <motion.path
+          d="M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.0904 7.5 20.3687C5.63177 19.362 4.37462 20.2979 3.26592 20.4658C3.09774 20.4913 2.93024 20.4302 2.80997 20.31C2.62741 20.1274 2.59266 19.8451 2.6935 19.6074C3.12865 18.5818 3.5282 16.6382 2.98341 15C2.6698 14.057 2.5 13.0483 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12Z"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.8,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+
+        {/* Three Dots */}
+        <motion.path
+          d="M12.1257 12H12.0007M8.125 12H8M16.125 12H16M12.2507 12C12.2507 12.1381 12.1388 12.25 12.0007 12.25C11.8627 12.25 11.7507 12.1381 11.7507 12C11.7507 11.8619 11.8627 11.75 12.0007 11.75C12.1388 11.75 12.2507 11.8619 12.2507 12ZM8.25 12C8.25 12.1381 8.13807 12.25 8 12.25C7.86193 12.25 7.75 12.1381 7.75 12C7.75 11.8619 7.86193 11.75 8 11.75C8.13807 11.75 8.25 11.8619 8.25 12ZM16.25 12C16.25 12.1381 16.1381 12.25 16 12.25C15.8619 12.25 15.75 12.1381 15.75 12C15.75 11.8619 15.8619 11.75 16 11.75C16.1381 11.75 16.25 11.8619 16.25 12Z"
+          variants={{
+            rest: { pathLength: 1 },
+            hover: {
+              pathLength: [0, 1],
+              transition: {
+                duration: 0.4,
+                delay: 0.7,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+      </motion.svg>
+    </motion.div>
+  );
+};
+
+export default ChatIco;
+
+
+`
+,
+
+PhoneCall :`
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const PhoneCallIco = () => {
+  return (
+    <motion.div
+      className="h-10 w-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+    >
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      >
+        <motion.path
+          d="M9.1585 5.71217L8.75584 4.80619C8.49256 4.21382 8.36092 3.91762 8.16405 3.69095C7.91732 3.40688 7.59571 3.19788 7.23592 3.08779C6.94883 2.99994 6.6247 2.99994 5.97645 2.99994C5.02815 2.99994 4.554 2.99994 4.15597 3.18223C3.68711 3.39696 3.26368 3.86322 3.09497 4.35054C2.95175 4.76423 2.99278 5.18937 3.07482 6.03964C3.94815 15.0901 8.91006 20.052 17.9605 20.9254C18.8108 21.0074 19.236 21.0484 19.6496 20.9052C20.137 20.7365 20.6032 20.3131 20.818 19.8442C21.0002 19.4462 21.0002 18.972 21.0002 18.0237C21.0002 17.3755 21.0002 17.0514 20.9124 16.7643C20.8023 16.4045 20.5933 16.0829 20.3092 15.8361C20.0826 15.6393 19.7864 15.5076 19.194 15.2443L18.288 14.8417C17.6465 14.5566 17.3257 14.414 16.9998 14.383C16.6878 14.3533 16.3733 14.3971 16.0813 14.5108C15.7762 14.6296 15.5066 14.8543 14.9672 15.3038C14.4304 15.7511 14.162 15.9748 13.834 16.0946C13.5432 16.2009 13.1588 16.2402 12.8526 16.1951C12.5071 16.1442 12.2426 16.0028 11.7135 15.7201C10.0675 14.8404 9.15977 13.9327 8.28011 12.2867C7.99738 11.7576 7.85602 11.4931 7.80511 11.1476C7.75998 10.8414 7.79932 10.457 7.90554 10.1662C8.02536 9.83822 8.24905 9.5698 8.69643 9.03294C9.14586 8.49362 9.37058 8.22396 9.48939 7.91885C9.60309 7.62688 9.64686 7.31234 9.61719 7.00042C9.58618 6.67446 9.44362 6.3537 9.1585 5.71217Z"
+          variants={{
+            rest: {
+              pathLength: 1,
+              fill: "transparent",
+            },
+            hover: {
+              pathLength: [0, 1],
+              fill: ["transparent", "transparent", "#22c55e"], // Green
+              transition: {
+                pathLength: {
+                  duration: 0.8,
+                  ease: "easeInOut",
+                },
+                fill: {
+                  delay: 0.8,
+                  duration: 0.25,
+                },
+              },
+            },
+          }}
+        />
+      </motion.svg>
+    </motion.div>
+  );
+};
+
+export default PhoneCallIco;
+
+
+
+`
 
 
 

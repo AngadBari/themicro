@@ -36,6 +36,12 @@ import StarIco from "./interaction/Star01Ico";
 import SupportIco from "./interaction/SupportIco";
 import LikeIcon from "./interaction/LikeIco";
 import DislikeIcon from "./interaction/DisLikeIco";
+import DollarIco from "./interaction/DollarIco";
+import DaimondIco from "./interaction/DaimondIco";
+import RupeeIco from "./interaction/RupeesIco";
+import QrCodeIco from "./interaction/QrCodeIco";
+import ChatIco from "./interaction/ChatIco";
+import PhoneCallIco from "./interaction/PhoneCallIco";
 
 interface IconAnimationProps {
   icons:IconConfig;
@@ -185,6 +191,33 @@ const copyCode = () => {
                {icons.interactionType == "Dislike" && (
               <DislikeIcon/>
             )}
+
+                {icons.interactionType == "Dollar" && (
+               <DollarIco/>
+            )}
+
+
+               {icons.interactionType == "Daimond" && (
+               <DaimondIco/>
+            )}
+
+               {icons.interactionType == "Rupees" && (
+               <RupeeIco/>
+            )}
+
+               {icons.interactionType == "Qr" && (
+               <QrCodeIco/>
+            )}
+
+              {icons.interactionType == "Chat" && (
+              <ChatIco/>
+            )}
+
+
+              {icons.interactionType == "PhoneCall" && (
+              <PhoneCallIco/>
+            )}
+
 
             
 
