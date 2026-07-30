@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import SlideArrow from "@/app/components /interactions/SlideArrow";
+import SlideArrow from "@/app/components /button/interactions/SlideArrow";
 import type { ButtonConfig } from "./data";
 
-import Setting from "../interactions/Setting";
-import Like from "../interactions/Like";
-import Send from "../interactions/Send";
-import GitHubStar from "../interactions/GitHubStar";
-import Submit from "../interactions/Submit";
+import Setting from "./interactions/Setting";
+import Like from "./interactions/Like";
+import Send from "./interactions/Send";
+import GitHubStar from "./interactions/GitHubStar";
+import Submit from "./interactions/Submit";
+import Sher from "./interactions/Sher";
+
 
 interface AnimatedButtonProps {
   button: ButtonConfig;
@@ -54,6 +56,13 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
        {button.interactionType === "submit" && (
         <Submit hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
       )}
+
+       {button.interactionType === "Sher" && (
+        <Sher hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
+      )}
+
+
+      
 
       
     </motion.button>

@@ -20,7 +20,7 @@ interface Props {
   Icon2: IconSvgElement;
 }
 
-export default function Submit({
+export default function Sher({
   hovered,
   label,
   Icon1,
@@ -79,7 +79,7 @@ export default function Submit({
             >
               <HugeiconsIcon
                 icon={Icon1}
-                size={16}
+                size={18}
               />
             </motion.div>
           </motion.div>
@@ -127,7 +127,7 @@ export default function Submit({
               stiffness: 650,
               damping: 22,
             }}
-            className="ml-2 flex items-center"
+            className=" flex items-center"
           >
             <motion.div
               animate={{
@@ -142,7 +142,7 @@ export default function Submit({
               <HugeiconsIcon
                 icon={Icon2}
                 size={16}
-                className="text-green-400"
+                className=""
               />
             </motion.div>
           </motion.div>

@@ -1,5 +1,5 @@
 import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon,GithubIcon,StarIcon,
-        SentIcon,Sent02Icon
+        SentIcon,Sent02Icon,Link03Icon,
 } from "@hugeicons/core-free-icons";
 
 
@@ -11,6 +11,7 @@ export type InteractionType =
   | "send" 
   | "star"
   | "submit"
+  | "Sher"
 
 export interface ButtonConfig {
   id: number;
@@ -101,7 +102,7 @@ export const buttons:ButtonConfig[] = [
 {
   id:6,
   category:"Button",
-  label:" Star on GitHub",
+  label:" Submit",
   dis:" Submit transition",
 
   interactionType:"submit",
@@ -111,6 +112,22 @@ export const buttons:ButtonConfig[] = [
 
   icon2:Sent02Icon,
   icon2Name:"Sent02Icon"
+},
+
+
+{
+  id:7,
+  category:"Button",
+  label:"Sher ",
+  dis:" Sher transition",
+
+  interactionType:"Sher",
+
+  icon1:Link03Icon,
+  icon1Name:"Link03Icon",
+
+  icon2:SentIcon,
+  icon2Name:"SentIcon"
 },
 
 ];
