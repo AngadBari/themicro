@@ -48,25 +48,28 @@ export default function Send({
             layout
             initial={{
               opacity: 0,
-              x: -12,
-              scale: 0.7,
+              x: -6,
+              rotate: -15,
+              scale: 0.9,
             }}
             animate={{
               opacity: 1,
-              x: 12,
+              x: 0,
+              rotate: 0,
               scale: 1,
             }}
             exit={{
               opacity: 0,
-              x: -12,
-              scale: 0.7,
+              x: -6,
+              rotate: 15,
+              scale: 0.9,
             }}
             transition={{
               type: "spring",
-              stiffness: 650,
-              damping: 22,
+              stiffness: 420,
+              damping: 24,
             }}
-            className="mr-2 flex  items-center"
+            className=" flex  items-center"
           >
             <motion.div
               animate={{
@@ -108,25 +111,28 @@ export default function Send({
           <motion.div
             key="right-icon"
             layout
-            initial={{
+             initial={{
               opacity: 0,
-              x: 12,
-              scale: 0.7,
+              x: -6,
+              rotate: -15,
+              scale: 0.9,
             }}
             animate={{
               opacity: 1,
               x: 0,
+              rotate: 0,
               scale: 1,
             }}
             exit={{
               opacity: 0,
-              x: 12,
-              scale: 0.7,
+              x: -6,
+              rotate: 15,
+              scale: 0.9,
             }}
             transition={{
               type: "spring",
-              stiffness: 650,
-              damping: 22,
+              stiffness: 420,
+              damping: 24,
             }}
             className=" flex items-center"
           >

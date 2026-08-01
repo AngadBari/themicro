@@ -4,9 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import type { IconSvgElement } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-import "tap-tone"
-
-
+import "tap-tone";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,9 +26,9 @@ export default function GitHubStar({
 }: Props) {
   return (
     <motion.div
-     data-tone-tap
+      data-tone-tap
       layout
-      className="flex gap-3 items-center"
+      className="flex items-center gap-3"
       transition={{
         layout: {
           type: "spring",
@@ -39,105 +37,49 @@ export default function GitHubStar({
         },
       }}
     >
-      {/* Left Icon */}
-      <AnimatePresence mode="popLayout">
-        {!hovered && (
-          <motion.div
-            key="left-icon"
-            layout
-            initial={{
-              opacity: 0,
-              x: -12,
-              scale: 0.7,
-            }}
-            animate={{
-              opacity: 1,
-              x: 12,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              x: -12,
-              scale: 0.7,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 650,
-              damping: 22,
-            }}
-            className="mr-2 flex  items-center"
-          >
+      {/* Icon */}
+      <div className="relative flex h-4 w-4 items-center justify-center">
+        <AnimatePresence mode="sync" initial={false}>
+          {!hovered ? (
             <motion.div
-              animate={{
-                scale: hovered ? 1.15 : 1,
-              }}
+              key="icon1"
+              className="absolute"
+              initial={{ opacity: 0, x: -4, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -4, scale: 0.9 }}
               transition={{
-                type: "spring",
-                stiffness: 500,
-                damping: 18,
+                duration: 0.15,
+                ease: "easeOut",
               }}
             >
-              <HugeiconsIcon
-                icon={Icon1}
-                size={16}
-              />
+              <HugeiconsIcon icon={Icon1} size={16} />
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-
-       <AnimatePresence mode="popLayout">
-        {hovered && (
-          <motion.div
-            key="right-icon"
-            layout
-            initial={{
-              opacity: 0,
-              x: 12,
-              scale: 0.7,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              x: 12,
-              scale: 0.7,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 650,
-              damping: 22,
-            }}
-            className="ml-2 flex items-center"
-          >
+          ) : (
             <motion.div
-              animate={{
-                scale: hovered ? 1.15 : 1,
-              }}
+              key="icon2"
+              className="absolute"
+              initial={{ opacity: 0, x: 4, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 4, scale: 0.9 }}
               transition={{
-                type: "spring",
-                stiffness: 500,
-                damping: 18,
+                duration: 0.15,
+                ease: "easeOut",
               }}
             >
               <HugeiconsIcon
                 icon={Icon2}
                 size={16}
-                fill=" yellow"
-                
+                fill="yellow"
               />
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* Label */}
       <motion.span
         layout
+        className={`${outfit.className} whitespace-nowrap text-[13px]`}
         transition={{
           layout: {
             type: "spring",
@@ -145,13 +87,9 @@ export default function GitHubStar({
             damping: 28,
           },
         }}
-        className={ `${outfit.className} text-[13px]  whitespace-nowrap `}
       >
         {label}
       </motion.span>
-
-      {/* Right Icon */}
-     
     </motion.div>
   );
 }
