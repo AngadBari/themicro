@@ -1,61 +1,74 @@
 
 
-import React from "react";
+"use client"
+
+  import React from 'react'
 import { motion } from "framer-motion";
 
-const ChatIco = () => {
+const GitHubIco = () => {
   return (
-    <motion.div
-      className="bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex justify-center items-center"
-      initial="rest"
-      whileHover="hover"
-    >
-      <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Chat Bubble */}
-        <motion.path
-          d="M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.0904 7.5 20.3687C5.63177 19.362 4.37462 20.2979 3.26592 20.4658C3.09774 20.4913 2.93024 20.4302 2.80997 20.31C2.62741 20.1274 2.59266 19.8451 2.6935 19.6074C3.12865 18.5818 3.5282 16.6382 2.98341 15C2.6698 14.057 2.5 13.0483 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12Z"
-          variants={{
-            rest: { pathLength: 1 },
-            hover: {
-              pathLength: [0, 1],
-              transition: {
-                duration: 0.8,
-                ease: "easeInOut",
-              },
-            },
-          }}
-        />
+     <motion.div
+              className="w-10 h-10 bg-neutral-50 dark:bg-neutral-900 dark:border-neutral-500 border shadow-md  border-gray-300 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 duration-200 flex gap-2 justify-center items-center"
+              initial="rest"
+              whileHover="hover"
+            >
 
-        {/* Three Dots */}
-        <motion.path
-          d="M12.1257 12H12.0007M8.125 12H8M16.125 12H16M12.2507 12C12.2507 12.1381 12.1388 12.25 12.0007 12.25C11.8627 12.25 11.7507 12.1381 11.7507 12C11.7507 11.8619 11.8627 11.75 12.0007 11.75C12.1388 11.75 12.2507 11.8619 12.2507 12ZM8.25 12C8.25 12.1381 8.13807 12.25 8 12.25C7.86193 12.25 7.75 12.1381 7.75 12C7.75 11.8619 7.86193 11.75 8 11.75C8.13807 11.75 8.25 11.8619 8.25 12ZM16.25 12C16.25 12.1381 16.1381 12.25 16 12.25C15.8619 12.25 15.75 12.1381 15.75 12C15.75 11.8619 15.8619 11.75 16 11.75C16.1381 11.75 16.25 11.8619 16.25 12Z"
-          variants={{
-            rest: { pathLength: 1 },
-            hover: {
-              pathLength: [0, 1],
-              transition: {
-                duration: 0.4,
-                delay: 0.7,
-                ease: "easeInOut",
-              },
-            },
-          }}
-        />
-      </motion.svg>
-    </motion.div>
-  );
-};
+              
 
-export default ChatIco;
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <motion.path
+                  d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17"
+                  variants={{
+                    rest: {
+                      pathLength: 1,
+                      opacity: 1,
+                    },
+                    hover: {
+                      pathLength: [0, 1],
+                      opacity: 1,
+                      transition: {
+                        duration: 1.5,
+                        ease: "easeInOut",
+                      },
+                    },
+                  }}
+                />
 
+                <motion.path
+                  d="M10 22V18.7579C10 18.1596 10.1839 17.6396 10.4804 17.1699C10.6838 16.8476 10.5445 16.3904 10.1771 16.2894C7.13394 15.4528 5 14.1077 5 9.64606C5 8.48611 5.38005 7.39556 6.04811 6.4464C6.21437 6.21018 6.29749 6.09208 6.31748 5.9851C6.33746 5.87813 6.30272 5.73852 6.23322 5.45932C5.95038 4.32292 5.96871 3.11619 6.39322 2.02823C6.39322 2.02823 7.27042 1.74242 9.26698 2.98969C9.72282 3.27447 9.95075 3.41686 10.1515 3.44871C10.3522 3.48056 10.6206 3.41384 11.1573 3.28041C11.8913 3.09795 12.6476 3 13.5 3C14.3524 3 15.1087 3.09795 15.8427 3.28041C16.3794 3.41384 16.6478 3.48056 16.8485 3.44871C17.0493 3.41686 17.2772 3.27447 17.733 2.98969C19.7296 1.74242 20.6068 2.02823 20.6068 2.02823C21.0313 3.11619 21.0496 4.32292 20.7668 5.45932C20.6973 5.73852 20.6625 5.87813 20.6825 5.9851C20.7025 6.09207 20.7856 6.21019 20.9519 6.4464C21.6199 7.39556 22 8.48611 22 9.64606C22 14.1077 19.8661 15.4528 16.8229 16.2894C16.4555 16.3904 16.3162 16.8476 16.5196 17.1699C16.8161 17.6396 17 18.1596 17 18.7579V22"
+                  variants={{
+                    rest: {
+                      pathLength: 1,
+                      opacity: 1,
+                    },
+                    hover: {
+                      pathLength: [0, 1],
+                      opacity: 1,
+                      transition: {
+                        duration: 1,
+                        delay: 0.1,
+                        ease: "easeInOut",
+                      },
+                    },
+                  }}
+                />
+              </motion.svg>
+             
+             
+
+            </motion.div>
+  )
+}
+
+export default GitHubIco
 
