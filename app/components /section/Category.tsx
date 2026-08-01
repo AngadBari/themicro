@@ -29,16 +29,12 @@ const data = [...buttons, ...cards, ...icons];
 const Category = () => {
   const [selected, setSelected] = useState("Button");
 
-  const filteredData = data.filter((item) => item.category === selected);
-
   return (
     <section className="mx-auto mt-20 w-full max-w-7xl px-4 py-8">
       <div
         id="comp"
         className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between"
       >
-        {/* Categories */}
-
         <div className="flex flex-wrap gap-3">
           {categories.map((category) => (
             <button
@@ -55,8 +51,6 @@ const Category = () => {
           ))}
         </div>
 
-        {/* GitHub Button */}
-
         <div className={`flex items-center gap-3 ${outfit1.className}`}>
           <Link
             href="https://github.com/AngadBari/themicro"
@@ -65,7 +59,6 @@ const Category = () => {
             className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-8 py-2 text-neutral-900 transition hover:bg-neutral-200"
           >
             <HugeiconsIcon icon={GithubIcon} size={18} strokeWidth={1.8} />
-
             <span className={`${outfit1.className} text-[13px]`}>
               Star on GitHub
             </span>
@@ -73,21 +66,18 @@ const Category = () => {
         </div>
       </div>
 
-      {/* Dynamic Grid */}
-
       <div
         className={
           selected === "Button"
             ? "mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3"
             : selected === "Icons"
-              ? "mx-auto  max-w-5xl  flex flex-wrap gap-6"
-              : "mx-auto grid max-w-5xl gap-6 sm:grid-cols-1 lg:grid-cols-2"
+            ? "mx-auto flex max-w-5xl flex-wrap gap-6"
+            : "mx-auto grid max-w-5xl gap-6 sm:grid-cols-1 lg:grid-cols-2"
         }
       >
-        {filteredData.map((item) => {
-          // Button Card
-
-          if ("icon1" in item && item.category === "Button") {
+        {/* Buttons */}
+        {selected === "Button" &&
+          buttons.map((item) => {
             const buttonCode = getComponentCode(item);
 
             return (
@@ -96,10 +86,7 @@ const Category = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
               >
                 <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
@@ -114,18 +101,20 @@ const Category = () => {
                       {item.label}
                     </h2>
 
-                    <p className="mt-1 text-xs text-neutral-500">{item.dis}</p>
+                    <p className="mt-1 text-xs text-neutral-500">
+                      {item.dis}
+                    </p>
                   </div>
 
                   <CopyCode code={buttonCode} />
                 </div>
               </motion.div>
             );
-          }
+          })}
 
-          // Carousel Card
-
-          if ("title" in item && item.category === "Carousel") {
+        {/* Carousels */}
+        {selected === "Carousel" &&
+          cards.map((item) => {
             const buttonCode = getComponentCodeCousel(item);
 
             return (
@@ -134,59 +123,56 @@ const Category = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-[#181818]"
               >
                 <CardAnimation card={item} />
 
                 <div className="mt-6 flex justify-between">
-                  <div className="">
+                  <div>
                     <h2
                       className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
                     >
                       {item.title}
                     </h2>
 
-                    <p className="mt-1 text-xs text-neutral-500">{item.dis}</p>
+                    <p className="mt-1 text-xs text-neutral-500">
+                      {item.dis}
+                    </p>
                   </div>
 
                   <CopyCode code={buttonCode} />
                 </div>
               </motion.div>
             );
-          }
+          })}
 
-          if ("label" in item && item.category === "Icons") {
-            return (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <IconAnimation icons={item} />
+        {/* Icons */}
+        {selected === "Icons" &&
+          icons.map((item) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <IconAnimation icons={item} />
 
-                <div className="mt-2 flex justify-between">
-                  <div>
-                    <h2
-                      className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
-                    >
-                      {item.label}
-                    </h2>
-                  </div>
+              <div className="mt-2 flex justify-between">
+                <div>
+                  <h2
+                    className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
+                  >
+                    {item.label}
+                  </h2>
+
+                 
                 </div>
-              </motion.div>
-            );
-          }
-
-          return null;
-        })}
+              </div>
+            </motion.div>
+          ))}
       </div>
     </section>
   );
 };
-
 export default Category;

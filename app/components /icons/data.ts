@@ -296,7 +296,7 @@ export const icons: IconConfig[] = [
     },
 
       {
-        id: 33,
+        id: 34,
         category: "Icons",
         label: "Rupees",
 
@@ -305,7 +305,7 @@ export const icons: IconConfig[] = [
 
 
      {
-        id: 34,
+        id: 35,
         category: "Icons",
         label: "QR",
 
@@ -313,7 +313,7 @@ export const icons: IconConfig[] = [
     },
 
      {
-        id: 35,
+        id: 36,
         category: "Icons",
         label: "Chat",
 
@@ -321,7 +321,7 @@ export const icons: IconConfig[] = [
     },
 
       {
-        id: 36,
+        id: 37,
         category: "Icons",
         label: "Phone-Call",
 
