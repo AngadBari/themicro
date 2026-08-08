@@ -5,6 +5,7 @@ import Hero from "./components /ui/Hero";
 import Category from "./components /section/Category";
 
 import GithubStars from "./components /GithubStars";
+import DownloadforMacButton from "./components /ex";
 
 
 
@@ -18,7 +19,10 @@ export default function Home() {
      <main className="mt-20 ">
         <Hero/>
         <Category/>
-         
+
+        <div className="flex justify-center items-center mb-10">
+         <DownloadforMacButton/>
+         </div>
         
        
 

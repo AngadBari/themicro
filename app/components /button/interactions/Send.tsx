@@ -29,132 +29,63 @@ export default function Send({
 }: Props) {
   return (
     <motion.div
-     data-tone-success
-      layout
-      className="flex gap-2 items-center"
-      transition={{
-        layout: {
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-        },
-      }}
-    >
-      {/* Left Icon */}
-      <AnimatePresence mode="popLayout">
-        {!hovered && (
-          <motion.div
-            key="left-icon"
-            layout
-            initial={{
-              opacity: 0,
-              x: -6,
-              rotate: -15,
-              scale: 0.9,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              rotate: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              x: -6,
-              rotate: 15,
-              scale: 0.9,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 420,
-              damping: 24,
-            }}
-            className=" flex  items-center"
-          >
-            <motion.div
-              animate={{
-                scale: hovered ? 1.15 : 1,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 500,
-                damping: 18,
-              }}
-            >
-              <HugeiconsIcon
-                icon={Icon1}
-                size={16}
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Label */}
-      <motion.span
-        layout
-        transition={{
-          layout: {
-            type: "spring",
-            stiffness: 500,
-            damping: 28,
-          },
-        }}
-        className={ `${outfit.className} text-[13px]  whitespace-nowrap `}
-      >
-        {label}
-      </motion.span>
-
-      {/* Right Icon */}
-      <AnimatePresence mode="popLayout">
-        {hovered && (
-          <motion.div
-            key="right-icon"
-            layout
-             initial={{
-              opacity: 0,
-              x: -6,
-              rotate: -15,
-              scale: 0.9,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              rotate: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              x: -6,
-              rotate: 15,
-              scale: 0.9,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 420,
-              damping: 24,
-            }}
-            className=" flex items-center"
-          >
-            <motion.div
-              animate={{
-                scale: hovered ? 1.15 : 1,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 500,
-                damping: 18,
-              }}
-            >
-              <HugeiconsIcon
-                icon={Icon1}
-                size={16}
-                className=" text-green-500"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+         data-tone-tap
+         layout
+         className="flex items-center gap-2"
+         transition={{
+           layout: {
+             type: "spring",
+             stiffness: 400,
+             damping: 28,
+           },
+         }}
+       >
+         {/* Left Icon */}
+         <motion.div
+           animate={{
+             x: hovered ? -30 : 0,
+             opacity: hovered ? 0 : 1,
+             width: hovered ? 0 : 16,
+           }}
+           transition={{
+             duration: 0.25,
+             ease: "easeInOut",
+           }}
+           className="overflow-hidden flex items-center"
+         >
+           <HugeiconsIcon icon={Icon1} size={16} />
+         </motion.div>
+   
+         {/* Label */}
+         <motion.span
+           layout
+           className={`${outfit.className} whitespace-nowrap text-[13px]`}
+           transition={{
+             layout: {
+               type: "spring",
+               stiffness: 400,
+               damping: 28,
+             },
+           }}
+         >
+           {label}
+         </motion.span>
+   
+         {/* Right Icon */}
+         <motion.div
+           animate={{
+             x: hovered ? 0 : 30,
+             opacity: hovered ? 1 : 0,
+             width: hovered ? 16 : 0,
+           }}
+           transition={{
+             duration: 0.25,
+             ease: "easeInOut",
+           }}
+           className="overflow-hidden flex items-center text-green-400"
+         >
+           <HugeiconsIcon icon={Icon1} size={16} />
+         </motion.div>
+       </motion.div>
   );
 }

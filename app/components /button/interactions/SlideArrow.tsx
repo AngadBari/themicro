@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
 import type { IconSvgElement } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
@@ -28,7 +28,7 @@ export default function SlideArrow({
     <motion.div
       data-tone-tap
       layout
-      className="flex items-center gap-3"
+      className="flex items-center gap-2"
       transition={{
         layout: {
           type: "spring",
@@ -38,46 +38,25 @@ export default function SlideArrow({
       }}
     >
       {/* Left Icon */}
-      <AnimatePresence mode="popLayout" initial={false}>
-        {!hovered && (
-          <motion.div
-            key="left-icon"
-            layout
-            initial={{
-              opacity: 0,
-              x: -4,
-              scale: 0.95,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              x: -4,
-              scale: 0.95,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 450,
-              damping: 30,
-              mass: 0.6,
-            }}
-            className="flex items-center"
-          >
-            <HugeiconsIcon
-              icon={Icon1}
-              size={16}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+      <motion.div
+        animate={{
+          x: hovered ? -30 : 0,
+          opacity: hovered ? 0 : 1,
+          width: hovered ? 0 : 16,
+        }}
+        transition={{
+          duration: 0.25,
+          ease: "easeInOut",
+        }}
+        className="overflow-hidden flex items-center"
+      >
+        <HugeiconsIcon icon={Icon1} size={16} />
+      </motion.div>
 
       {/* Label */}
       <motion.span
         layout
+        className={`${outfit.className} whitespace-nowrap text-[13px]`}
         transition={{
           layout: {
             type: "spring",
@@ -85,48 +64,25 @@ export default function SlideArrow({
             damping: 28,
           },
         }}
-        className={`${outfit.className} text-[13px] whitespace-nowrap`}
       >
         {label}
       </motion.span>
 
-
       {/* Right Icon */}
-      <AnimatePresence mode="popLayout" initial={false}>
-        {hovered && (
-          <motion.div
-            key="right-icon"
-            layout
-            initial={{
-              opacity: 0,
-              x: 4,
-              scale: 0.95,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              x: 4,
-              scale: 0.95,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 450,
-              damping: 30,
-              mass: 0.6,
-            }}
-            className="flex items-center"
-          >
-            <HugeiconsIcon
-              icon={Icon2}
-              size={16}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        animate={{
+          x: hovered ? 0 : 30,
+          opacity: hovered ? 1 : 0,
+          width: hovered ? 16 : 0,
+        }}
+        transition={{
+          duration: 0.25,
+          ease: "easeInOut",
+        }}
+        className="overflow-hidden flex items-center"
+      >
+        <HugeiconsIcon icon={Icon2} size={16} />
+      </motion.div>
     </motion.div>
   );
 }
