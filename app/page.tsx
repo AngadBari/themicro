@@ -20,9 +20,7 @@ export default function Home() {
         <Hero/>
         <Category/>
 
-        <div className="flex justify-center items-center mb-10">
-         <DownloadforMacButton/>
-         </div>
+        
         
        
 
