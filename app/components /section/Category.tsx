@@ -1,41 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Outfit } from "next/font/google";
 import { motion } from "framer-motion";
+
 import { HugeiconsIcon } from "@hugeicons/react";
 import { GithubIcon } from "@hugeicons/core-free-icons";
 
 import { buttons } from "@/app/components /button/data";
 import AnimatedButton from "../button/AnimationButton";
+
 import CopyCode from "@/app/components /section/CopyCode";
 import { getComponentCode } from "@/app/components /CodeMakerbtn";
+
 import { cards } from "../card/data";
-import { icons } from "@/app/components /icons/data";
 import CardAnimation from "../card/CarouselAnimation";
 import { getComponentCodeCousel } from "../CodeMakerCousel";
+
+import { icons } from "@/app/components /icons/data";
 import IconAnimation from "../icons/IconAnimation";
+
+import { orbs } from "@/app/components /orbs/data";
+import OrbAnimation from "@/app/components /orbs/OrbAnimation";
+import { getComponentCodeOrb } from "@/app/OrbCodeMaker";
 
 const outfit1 = Outfit({
   subsets: ["latin"],
   weight: ["600"],
 });
 
-const categories = ["Button", "Carousel", "Icons"];
-
-const data = [...buttons, ...cards, ...icons];
+const categories = ["Button", "Carousel", "Icons", "Orbs"];
 
 const Category = () => {
   const [selected, setSelected] = useState("Button");
 
   return (
-    <section className="mx-auto mt-20 w-full max-w-7xl px-4 py-8">
-      <div
-        id="comp"
-        className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between"
-      >
-        <div className="flex flex-wrap gap-3">
+    <section className="w-full px-4 py-10">
+      {/* Header */}
+      <div className="mx-auto mb-10 flex max-w-5xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        {/* Categories */}
+        <div className="flex flex-wrap items-center gap-2">
           {categories.map((category) => (
             <button
               key={category}
@@ -51,14 +56,20 @@ const Category = () => {
           ))}
         </div>
 
+        {/* GitHub */}
         <div className={`flex items-center gap-3 ${outfit1.className}`}>
           <Link
             href="https://github.com/AngadBari/themicro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-8 py-2 text-neutral-900 transition hover:bg-neutral-200"
+            className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-8 py-2 text-neutral-900 transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
           >
-            <HugeiconsIcon icon={GithubIcon} size={18} strokeWidth={1.8} />
+            <HugeiconsIcon
+              icon={GithubIcon}
+              size={18}
+              strokeWidth={1.8}
+            />
+
             <span className={`${outfit1.className} text-[13px]`}>
               Star on GitHub
             </span>
@@ -66,16 +77,19 @@ const Category = () => {
         </div>
       </div>
 
+      {/* Content */}
       <div
         className={
           selected === "Button"
             ? "mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3"
             : selected === "Icons"
-            ? "mx-auto flex max-w-5xl flex-wrap gap-6"
-            : "mx-auto grid max-w-5xl gap-6 sm:grid-cols-1 lg:grid-cols-2"
+              ? "mx-auto flex max-w-5xl flex-wrap gap-6"
+              : selected === "Orbs"
+                ? "mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-2"
+                : "mx-auto grid max-w-5xl gap-6 sm:grid-cols-1 lg:grid-cols-2"
         }
       >
-        {/* Buttons */}
+        {/* ================= BUTTONS ================= */}
         {selected === "Button" &&
           buttons.map((item) => {
             const buttonCode = getComponentCode(item);
@@ -86,13 +100,18 @@ const Category = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
                 className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
               >
+                {/* Preview */}
                 <div className="flex h-40 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-[#131313]">
                   <AnimatedButton button={item} />
                 </div>
 
+                {/* Info */}
                 <div className="mt-6 flex items-center justify-between px-2">
                   <div>
                     <h2
@@ -112,10 +131,10 @@ const Category = () => {
             );
           })}
 
-        {/* Carousels */}
+        {/* ================= CAROUSELS ================= */}
         {selected === "Carousel" &&
           cards.map((item) => {
-            const buttonCode = getComponentCodeCousel(item);
+            const carouselCode = getComponentCodeCousel(item);
 
             return (
               <motion.div
@@ -123,12 +142,17 @@ const Category = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-[#181818]"
               >
+                {/* Preview */}
                 <CardAnimation card={item} />
 
-                <div className="mt-6 flex justify-between">
+                {/* Info */}
+                <div className="mt-6 flex items-center justify-between">
                   <div>
                     <h2
                       className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
@@ -141,20 +165,23 @@ const Category = () => {
                     </p>
                   </div>
 
-                  <CopyCode code={buttonCode} />
+                  <CopyCode code={carouselCode} />
                 </div>
               </motion.div>
             );
           })}
 
-        {/* Icons */}
+        {/* ================= ICONS ================= */}
         {selected === "Icons" &&
           icons.map((item) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
             >
               <IconAnimation icons={item} />
 
@@ -165,14 +192,61 @@ const Category = () => {
                   >
                     {item.label}
                   </h2>
-
-                 
                 </div>
               </div>
             </motion.div>
           ))}
+
+        {/* ================= ORBS ================= */}
+        {selected === "Orbs" &&
+  orbs.map((item) => {
+    const orbCode = getComponentCodeOrb(item);
+
+    return (
+      <motion.div
+        key={item.id}
+        initial={{
+          opacity: 0,
+          y: 40,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeOut",
+        }}
+        className="rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-neutral-800 dark:bg-[#181818]"
+      >
+        {/* Orb Preview */}
+        <div className="flex h-48 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-100 text-black dark:border-neutral-800 dark:bg-[#131313] dark:text-white">
+          <OrbAnimation orb={item} />
+        </div>
+
+        {/* Orb Info */}
+        <div className="mt-6 flex items-center justify-between px-2">
+          <div>
+            <h2
+              className={`${outfit1.className} text-sm text-neutral-900 dark:text-neutral-100`}
+            >
+              {item.label}
+            </h2>
+
+            <p className="mt-1 text-xs text-neutral-500">
+              {item.dis}
+            </p>
+          </div>
+
+          {/* Copy Code */}
+          <CopyCode code={orbCode} />
+        </div>
+      </motion.div>
+    );
+  })}
       </div>
     </section>
   );
 };
+
 export default Category;

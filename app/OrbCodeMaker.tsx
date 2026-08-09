@@ -1,6 +1,9 @@
+import type { OrbData } from "./components/orbs/data";
 
- 
-      "use client";
+export function getComponentCodeOrb(orb: OrbData): string {
+  switch (orb.type) {
+    case "particle":
+      return `"use client";
 
 import { motion } from "framer-motion";
 import { useMemo } from "react";
@@ -27,8 +30,8 @@ export default function ParticleOrb({
   const particles = useMemo<Particle[]>(() => {
     const result: Particle[] = [];
 
-    // Create latitude rings
     const rings = 9;
+
     const pointsPerRing = Math.max(
       4,
       Math.floor(particleCount / rings)
@@ -37,7 +40,6 @@ export default function ParticleOrb({
     const radius = size * 0.43;
 
     for (let ring = 0; ring < rings; ring++) {
-      // From top to bottom of sphere
       const phi =
         Math.PI * (ring + 1) / (rings + 1);
 
@@ -66,7 +68,6 @@ export default function ParticleOrb({
           const z3d =
             Math.sin(rotation) * ringRadius;
 
-          // Slight perspective
           const perspective =
             0.78 + (z3d + 1) * 0.16;
 
@@ -76,7 +77,6 @@ export default function ParticleOrb({
           const y =
             yBase * radius;
 
-          // Back particles become dimmer
           const opacity =
             0.18 + ((z3d + 1) / 2) * 0.82;
 
@@ -89,7 +89,6 @@ export default function ParticleOrb({
           scaleFrames.push(scale);
         }
 
-        // Deterministic size variation
         const sizeVariation =
           1.2 +
           ((ring * 17 + point * 7) % 10) / 10;
@@ -115,7 +114,6 @@ export default function ParticleOrb({
         height: size,
       }}
     >
-      {/* Very subtle glow behind the sphere */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
         style={{
@@ -126,7 +124,6 @@ export default function ParticleOrb({
         }}
       />
 
-      {/* Particles */}
       <div className="absolute inset-0">
         {particles.map((particle, index) => (
           <motion.span
@@ -157,7 +154,9 @@ export default function ParticleOrb({
     </div>
   );
 }
+`;
 
-
-
-   
+    default:
+      return "";
+  }
+}

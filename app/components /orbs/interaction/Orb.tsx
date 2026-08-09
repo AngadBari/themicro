@@ -1,6 +1,4 @@
-
- 
-      "use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { useMemo } from "react";
@@ -157,7 +155,3 @@ export default function ParticleOrb({
     </div>
   );
 }
-
-
-
-   

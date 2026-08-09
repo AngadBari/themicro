@@ -1,4 +1,4 @@
-import { CardData, cards } from "./card/data";
+import { CardData } from "./card/data";
 
 export function getComponentCodeCousel(card: CardData) {
 
