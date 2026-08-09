@@ -111,7 +111,7 @@ export default function WorkingOrb({
         height: size,
       }}
     >
-      {/* Very subtle circular glow */}
+      
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
         style={{
@@ -122,7 +122,7 @@ export default function WorkingOrb({
         }}
       />
 
-      {/* Particles */}
+      
       <div className="absolute inset-0">
         {particles.map((particle, index) => (
           <motion.span

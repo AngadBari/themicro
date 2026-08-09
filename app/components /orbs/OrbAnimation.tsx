@@ -1,8 +1,8 @@
 "use client";
 
 import { SearchingIcon } from "@hugeicons/core-free-icons";
-import ParticleOrb from "./interaction/Orb";
 import type { OrbData } from "./data";
+import ParticleOrb from "./interaction/Orb";
 import SearchingOrb from "./interaction/SearchOrb";
 import WorkingOrb from "./interaction/WorkingOrb";
 import ListeningOrb from "./interaction/listening";

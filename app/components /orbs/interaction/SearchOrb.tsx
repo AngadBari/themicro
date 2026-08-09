@@ -45,7 +45,7 @@ export default function SearchingOrb({
         height: size,
       }}
     >
-      {/* Main glow */}
+      
       <motion.div
         className="absolute left-1/2 top-1/2 rounded-full blur-xl"
         style={{
@@ -67,7 +67,7 @@ export default function SearchingOrb({
         }}
       />
 
-      {/* Searching particles */}
+     
       <div className="absolute inset-0">
         {particles.map((particle, index) => (
           <motion.span
@@ -112,7 +112,7 @@ export default function SearchingOrb({
         ))}
       </div>
 
-      {/* Searching circle */}
+     
       <motion.div
         className="absolute left-1/2 top-1/2 rounded-full"
         style={{
@@ -133,7 +133,7 @@ export default function SearchingOrb({
         }}
       />
 
-      {/* Searching line - clockwise */}
+     
       <motion.div
         className="absolute left-1/2 top-1/2 origin-left"
         style={{
@@ -154,7 +154,7 @@ export default function SearchingOrb({
         }}
       />
 
-      {/* Opposite direction glow */}
+     
       <motion.div
         className="absolute left-1/2 top-1/2 origin-left"
         style={{
@@ -175,7 +175,7 @@ export default function SearchingOrb({
         }}
       />
 
-      {/* Center point */}
+     
       <motion.div
         className="absolute left-1/2 top-1/2 rounded-full"
         style={{

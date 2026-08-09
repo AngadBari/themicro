@@ -25,7 +25,7 @@ export default function ListeningOrb({
   const particles = useMemo<Particle[]>(() => {
     const result: Particle[] = [];
 
-    // Sphere structure
+  
     const rings = 9;
 
     const pointsPerRing = Math.max(
@@ -75,7 +75,7 @@ export default function ListeningOrb({
             Math.sin(rotation) *
             ringRadius;
 
-          // Perspective
+          
           const perspective =
             0.78 +
             (z3d + 1) * 0.16;
@@ -88,12 +88,12 @@ export default function ListeningOrb({
           const y =
             yBase * radius;
 
-          // Back blocks are darker
+          
           const opacity =
             0.15 +
             ((z3d + 1) / 2) * 0.85;
 
-          // Front blocks become slightly larger
+          
           const scale =
             0.65 +
             ((z3d + 1) / 2) * 0.65;
@@ -104,7 +104,7 @@ export default function ListeningOrb({
           scaleFrames.push(scale);
         }
 
-        // Cube size variation
+       
         const sizeVariation =
           1.6 +
           ((ring * 17 + point * 7) % 10) /
@@ -131,7 +131,7 @@ export default function ListeningOrb({
         height: size,
       }}
     >
-      {/* Very soft aura */}
+      
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
         style={{
@@ -142,7 +142,7 @@ export default function ListeningOrb({
         }}
       />
 
-      {/* Orb */}
+      
       <div className="absolute inset-0">
         {particles.map((particle, index) => (
           <motion.div
@@ -160,10 +160,10 @@ export default function ListeningOrb({
 
               backgroundColor: color,
 
-              // Cube-like corners
+             
               borderRadius: "1px",
 
-              // Glowing block
+            
               boxShadow: `
                 0 0 3px ${color},
                 0 0 7px ${color},

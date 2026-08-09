@@ -64,7 +64,7 @@ export default function ParticleOrb({
           const z3d =
             Math.sin(rotation) * ringRadius;
 
-          // Slight perspective
+        
           const perspective =
             0.78 + (z3d + 1) * 0.16;
 
@@ -74,7 +74,7 @@ export default function ParticleOrb({
           const y =
             yBase * radius;
 
-          // Back particles become dimmer
+          
           const opacity =
             0.18 + ((z3d + 1) / 2) * 0.82;
 
@@ -87,7 +87,7 @@ export default function ParticleOrb({
           scaleFrames.push(scale);
         }
 
-        // Deterministic size variation
+        
         const sizeVariation =
           1.2 +
           ((ring * 17 + point * 7) % 10) / 10;
@@ -113,7 +113,7 @@ export default function ParticleOrb({
         height: size,
       }}
     >
-      {/* Very subtle glow behind the sphere */}
+     
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
         style={{

@@ -118,8 +118,8 @@ export const buttons:ButtonConfig[] = [
 {
   id:7,
   category:"Button",
-  label:"Sher ",
-  dis:" Sher transition",
+  label:"Share ",
+  dis:" Share transition",
 
   interactionType:"Sher",
 
