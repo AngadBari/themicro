@@ -11,6 +11,8 @@ import Send from "./interactions/Send";
 import GitHubStar from "./interactions/GitHubStar";
 import Submit from "./interactions/Submit";
 import Sher from "./interactions/Sher";
+import Search from "./interactions/Search";
+
 
 
 interface AnimatedButtonProps {
@@ -60,6 +62,12 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
        {button.interactionType === "Sher" && (
         <Sher hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
       )}
+
+      {button.interactionType === "Search" && (
+        <Search hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
+      )}
+
+     
 
 
       
