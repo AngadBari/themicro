@@ -10,14 +10,16 @@ import Orb from "./components /orbs/interaction/Orb";
 
 import WorkOrb from "./components /orbs/interaction/WorkingOrb";
 import SearchingOrb from "./components /orbs/interaction/SearchOrb";
+import SearchButton from "./components /ex";
 
 export default function Home() {
   return (
      <main className=" ">
         <Hero/>
         <Category/>
- 
-     
+       
+      
+        <SearchButton/>
         
      </main>
   );

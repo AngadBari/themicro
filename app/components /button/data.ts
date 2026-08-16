@@ -1,5 +1,5 @@
 import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon,GithubIcon,StarIcon,
-        SentIcon,Sent02Icon,Link03Icon,Search01Icon,Cancel01Icon
+        SentIcon,Sent02Icon,Link03Icon,Search01Icon,Cancel01Icon,Delete02Icon,Moon02Icon,Sun02Icon
 } from "@hugeicons/core-free-icons";
 
 
@@ -13,6 +13,8 @@ export type InteractionType =
   | "submit"
   | "Sher"
   | "Search"
+  |"Delete"
+  |"theme"
 
 export interface ButtonConfig {
   id: number;
@@ -144,6 +146,32 @@ export const buttons:ButtonConfig[] = [
 
   icon2:Cancel01Icon,
   icon2Name:"Cancel01Icon"
+},
+ {
+    id: 9,
+    category: "Button",
+    label: "Delete",
+    dis: " Delete transition with Color",
+
+    interactionType: "Delete",
+
+    icon1: Delete02Icon,
+    icon1Name: "Delete02Icon",
+  },
+
+    {
+  id:10,
+  category:"Button",
+  label:" Theme",
+  dis:"Moon to Sun transition ",
+
+  interactionType:"theme",
+
+  icon1:Moon02Icon,
+  icon1Name:"Moon02Icon",
+
+  icon2:Sun02Icon,
+  icon2Name:"Sun02Icon"
 },
 
 ];
