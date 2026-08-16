@@ -1,5 +1,5 @@
 import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon,GithubIcon,StarIcon,
-        SentIcon,Sent02Icon,Link03Icon,Search01Icon,Cancel01Icon,Delete02Icon,Moon02Icon,Sun02Icon
+        SentIcon,Sent02Icon,Link03Icon,Search01Icon,Cancel01Icon,Delete02Icon,Moon02Icon,Sun02Icon,ReloadIcon
 } from "@hugeicons/core-free-icons";
 
 
@@ -15,6 +15,7 @@ export type InteractionType =
   | "Search"
   |"Delete"
   |"theme"
+  |"reload"
 
 export interface ButtonConfig {
   id: number;
@@ -173,5 +174,18 @@ export const buttons:ButtonConfig[] = [
   icon2:Sun02Icon,
   icon2Name:"Sun02Icon"
 },
+
+ {
+    id: 11,
+    category: "Button",
+    label: "Reload",
+    dis: "Rotate transition",
+
+    interactionType: "setting",
+
+    icon1: ReloadIcon,
+    icon1Name: "ReloadIcon",
+  },
+
 
 ];

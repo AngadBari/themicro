@@ -1008,6 +1008,97 @@ export default function ${button.label.replace(/\s+/g, "")}Button() {
 
 
 
+case "reload":
+      return `
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import type { IconSvgElement } from "@hugeicons/react";
+import { Outfit } from "next/font/google";
+import { useState } from "react";
+import "tap-tone";
+
+import {
+  ${button.icon1Name}
+ 
+} from "@hugeicons/core-free-icons";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+});
+
+export default function ${button.label.replace(/\s+/g, "")}Button() {
+  const [hovered, setHovered] = useState(false);
+
+   return (
+
+     <motion.button
+      data-tone-tap
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      whileHover={{ scale: 1.08 }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 22,
+      }}
+      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white group"
+    >
+     <motion.div
+      layout
+      className="flex items-center "
+      transition={{
+        layout: {
+          type: "spring",
+          stiffness: 500,
+          damping: 28,
+        },
+      }}
+    >
+      {/* Reload Icon */}
+      <motion.div
+        className="mr-2 flex items-center"
+        animate={{
+          rotate: hovered ? 360 : 0,
+        }}
+        transition={{
+          duration: 1,
+          ease: "linear",
+          repeat: hovered ? Infinity : 0,
+        }}
+      >
+        <HugeiconsIcon
+          icon={${button.icon1Name}
+          size={16}
+        />
+      </motion.div>
+
+      {/* Label */}
+      <motion.span
+        layout
+        transition={{
+          layout: {
+            type: "spring",
+            stiffness: 500,
+            damping: 28,
+          },
+        }}
+         className={\`\${outfit.className} whitespace-nowrap text-[13px]\`}
+      >
+        ${button.label}
+      </motion.span>
+    </motion.div>
+    </motion.button>
+  );
+}
+
+`;
+
+
+
+
 
       
 

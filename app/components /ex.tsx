@@ -1,108 +1,62 @@
 
+
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
-import type { IconSvgElement } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-import "tap-tone";
+
+
 
 import {
-  Moon02Icon,
-  Sun02Icon
+  ReloadIcon
 } from "@hugeicons/core-free-icons";
-import { useState } from "react";
+
 
 const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["600"],
+  subsets:["latin"],
+  weight:["600"],
 });
 
-export default function StaronGitHubButton() {
-  const [hovered, setHovered] = useState(false);
 
-   return (
+export default function ReloadButton(){
 
-     <motion.button
-      data-tone-tap
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      whileHover={{ scale: 1.08 }}
-      transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 22,
-      }}
-      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white group"
+  const [hovered,setHovered] = useState(false);
+  return (
+    <motion.button
+     
+      onMouseEnter={()=>setHovered(true)}
+      onMouseLeave={()=>setHovered(false)}
+      className=" inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 transition-all hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800 hover:scale-110 duration-200
+      "
     >
+
       <motion.div
-      data-tone-tap
-      layout
-      className="flex items-center gap-3"
-      transition={{
-        layout: {
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-        },
-      }}
-    >
-      {/* Icon */}
-      <div className="relative flex h-4 w-4 items-center justify-center">
-        <AnimatePresence mode="sync" initial={false}>
-          {!hovered ? (
-            <motion.div
-              key="icon1"
-              className="absolute"
-              initial={{ opacity: 0, x: -4, scale: 0.9 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -4, scale: 0.9 }}
-              transition={{
-                duration: 0.15,
-                ease: "easeOut",
-              }}
-            >
-              <HugeiconsIcon icon={Moon02Icon} size={16} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="icon2"
-              className="absolute"
-              initial={{ opacity: 0, x: 4, scale: 0.9 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: 4, scale: 0.9 }}
-              transition={{
-                duration: 0.15,
-                ease: "easeOut",
-              }}
-            >
-              <HugeiconsIcon
-                icon={Sun02Icon}
-                size={16}
-                className="text-yellow-300"
-                fill="none"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
 
-      {/* Label */}
-      <motion.span
-        layout
-         className={`${outfit.className} whitespace-nowrap text-[13px]`}
+        animate={{
+          rotate:hovered ? 360 : 0
+        }}
+
         transition={{
-          layout: {
-            type: "spring",
-            stiffness: 500,
-            damping: 28,
-          },
+          duration:1,
+          ease:"linear",
+          repeat:hovered ? Infinity : 0
         }}
       >
-         Star on GitHub
-      </motion.span>
-    </motion.div>
+        <HugeiconsIcon
+          icon={ReloadIcon}
+          size={16}
+        />
+      </motion.div>
+
+      <span className={`${outfit.className} text-[13px] ml-2`} >
+        Reload
+      </span>
+
     </motion.button>
+
   );
+
 }
 
