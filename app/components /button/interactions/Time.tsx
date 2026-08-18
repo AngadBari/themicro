@@ -1,39 +1,31 @@
-
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { HugeiconsIcon } from "@hugeicons/react";
+import type { IconSvgElement } from "@hugeicons/react";
 import { Outfit } from "next/font/google";
-
-import {
-  AlarmClockIcon,
-  AlarmClockOffIcon,
-} from "@hugeicons/core-free-icons";
+import "tap-tone";
 
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["600"],
 });
 
-export default function TimeButton() {
-  const [hovered, setHovered] = useState(false);
+interface Props {
+  hovered: boolean;
+  label: string;
+  Icon1: IconSvgElement;
+  Icon2: IconSvgElement;
+}
 
-   return (
-
-     <motion.button
-      data-tone-tap
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      whileHover={{ scale: 1.08 }}
-      transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 22,
-      }}
-      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
-    >
-      <motion.div
+export default function Time({
+  hovered,
+  label,
+  Icon1,
+  Icon2,
+}: Props) {
+  return (
+    <motion.div
       data-tone-tap
       layout
       className="flex items-center gap-3"
@@ -60,7 +52,7 @@ export default function TimeButton() {
                 ease: "easeOut",
               }}
             >
-              <HugeiconsIcon icon={AlarmClockIcon} size={16} />
+              <HugeiconsIcon icon={Icon1} size={16} />
             </motion.div>
           ) : (
             <motion.div
@@ -75,9 +67,9 @@ export default function TimeButton() {
               }}
             >
               <HugeiconsIcon
-                icon={AlarmClockOffIcon}
+                icon={Icon2}
                 size={16}
-               
+              
               />
             </motion.div>
           )}
@@ -87,7 +79,7 @@ export default function TimeButton() {
       {/* Label */}
       <motion.span
         layout
-         className={`${outfit.className} whitespace-nowrap text-[13px]`}
+        className={`${outfit.className} whitespace-nowrap text-[13px]`}
         transition={{
           layout: {
             type: "spring",
@@ -96,10 +88,8 @@ export default function TimeButton() {
           },
         }}
       >
-        Time 
+        {label}
       </motion.span>
     </motion.div>
-    </motion.button>
   );
 }
-

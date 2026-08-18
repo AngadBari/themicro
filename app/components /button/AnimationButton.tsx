@@ -15,6 +15,9 @@ import Search from "./interactions/Search";
 import Delete from "./interactions/Delete";
 import Theme from "./interactions/Theme";
 import Reload from "./interactions/Reload"
+import Fav from "./interactions/Fav"
+import Verifly from "./interactions/verifly";
+import Time from "./interactions/Time";
 
 
 
@@ -81,6 +84,22 @@ export default function AnimatedButton({ button }: AnimatedButtonProps) {
        {button.interactionType === "reload" && (
         <Reload hovered={hovered} label={button.label} Icon1={button.icon1} />
       )}
+
+       {button.interactionType === "Fav" && (
+        <Fav hovered={hovered} label={button.label} Icon1={button.icon1} />
+      )}
+
+
+      {button.interactionType === "verifly" && (
+        <Verifly hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
+      )}
+
+
+      {button.interactionType === "Time" && (
+        <Time hovered={hovered} label={button.label} Icon1={button.icon1}  Icon2={button.icon2} />
+      )}
+
+     
 
      
 

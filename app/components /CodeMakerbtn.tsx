@@ -1096,6 +1096,305 @@ export default function ${button.label.replace(/\s+/g, "")}Button() {
 
 `;
 
+case "Fav":
+      return `
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Outfit } from "next/font/google";
+
+import {
+  ${button.icon1Name}
+} from "@hugeicons/core-free-icons";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+});
+
+export default function ${button.label.replace(/\s+/g, "")}Button() {
+  const [hovered, setHovered] = useState(false);
+
+   return (
+
+     <motion.button
+      data-tone-tap
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      whileHover={{ scale: 1.08 }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 22,
+      }}
+      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white group"
+    >
+   
+     
+      <motion.div
+    data-tone-press
+      layout
+      className="flex items-center group "
+      transition={{
+        layout: {
+          type: "spring",
+          stiffness: 500,
+          damping: 28,
+        },
+      }}
+    >
+     
+      <motion.div
+        className="mr-2 flex items-center "
+       
+      >
+        <HugeiconsIcon
+          icon={${button.icon1Name}}
+          size={18}
+          className="transition-colors duration-200 group-hover:fill-red-600  "
+        />
+      </motion.div>
+
+      {/* Label */}
+      <motion.span
+        layout
+        transition={{
+          layout: {
+            type: "spring",
+            stiffness: 500,
+            damping: 28,
+          },
+        }}
+         className={\`\${outfit.className} whitespace-nowrap text-[13px]\`}
+      >
+        ${button.label}
+      </motion.span>
+    </motion.div>
+    </motion.button>
+  );
+}
+
+`;
+
+
+case "verifly":
+      return `
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Outfit } from "next/font/google";
+
+import {
+  ${button.icon1Name},
+  ${button.icon2Name},
+} from "@hugeicons/core-free-icons";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+});
+
+export default function ${button.label.replace(/\s+/g, "")}Button() {
+  const [hovered, setHovered] = useState(false);
+
+   return (
+
+     <motion.button
+      data-tone-tap
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      whileHover={{ scale: 1.08 }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 22,
+      }}
+      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+    >
+      <motion.div
+      data-tone-tap
+      layout
+      className="flex items-center gap-3"
+      transition={{
+        layout: {
+          type: "spring",
+          stiffness: 500,
+          damping: 28,
+        },
+      }}
+    >
+      {/* Icon */}
+      <div className="relative flex h-4 w-4 items-center justify-center">
+        <AnimatePresence mode="sync" initial={false}>
+          {!hovered ? (
+            <motion.div
+              key="icon1"
+              className="absolute"
+              initial={{ opacity: 0, x: -4, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -4, scale: 0.9 }}
+              transition={{
+                duration: 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <HugeiconsIcon icon={${button.icon1Name}} size={16} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="icon2"
+              className="absolute"
+              initial={{ opacity: 0, x: 4, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 4, scale: 0.9 }}
+              transition={{
+                duration: 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <HugeiconsIcon
+                icon={${button.icon2Name}}
+                size={16}
+               className=" fill-green-600"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Label */}
+      <motion.span
+        layout
+         className={\`\${outfit.className} whitespace-nowrap text-[13px]\`}
+        transition={{
+          layout: {
+            type: "spring",
+            stiffness: 500,
+            damping: 28,
+          },
+        }}
+      >
+        ${button.label}
+      </motion.span>
+    </motion.div>
+    </motion.button>
+  );
+}
+
+`;
+
+
+case "Time":
+      return `
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Outfit } from "next/font/google";
+
+import {
+  ${button.icon1Name},
+  ${button.icon2Name},
+} from "@hugeicons/core-free-icons";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600"],
+});
+
+export default function ${button.label.replace(/\s+/g, "")}Button() {
+  const [hovered, setHovered] = useState(false);
+
+   return (
+
+     <motion.button
+      data-tone-tap
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      whileHover={{ scale: 1.08 }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 22,
+      }}
+      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-7 py-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+    >
+      <motion.div
+      data-tone-tap
+      layout
+      className="flex items-center gap-3"
+      transition={{
+        layout: {
+          type: "spring",
+          stiffness: 500,
+          damping: 28,
+        },
+      }}
+    >
+      {/* Icon */}
+      <div className="relative flex h-4 w-4 items-center justify-center">
+        <AnimatePresence mode="sync" initial={false}>
+          {!hovered ? (
+            <motion.div
+              key="icon1"
+              className="absolute"
+              initial={{ opacity: 0, x: -4, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -4, scale: 0.9 }}
+              transition={{
+                duration: 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <HugeiconsIcon icon={${button.icon1Name}} size={16} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="icon2"
+              className="absolute"
+              initial={{ opacity: 0, x: 4, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 4, scale: 0.9 }}
+              transition={{
+                duration: 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <HugeiconsIcon
+                icon={${button.icon2Name}}
+                size={16}
+               
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Label */}
+      <motion.span
+        layout
+         className={\`\${outfit.className} whitespace-nowrap text-[13px]\`}
+        transition={{
+          layout: {
+            type: "spring",
+            stiffness: 500,
+            damping: 28,
+          },
+        }}
+      >
+        ${button.label}
+      </motion.span>
+    </motion.div>
+    </motion.button>
+  );
+}
+
+`;
 
 
 
@@ -1106,4 +1405,7 @@ export default function ${button.label.replace(/\s+/g, "")}Button() {
       return "";
   }
 }
+
+
+
 

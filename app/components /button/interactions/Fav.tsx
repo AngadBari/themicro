@@ -16,15 +16,16 @@ interface Props {
   Icon1: IconSvgElement;
 }
 
-export default function Reload({
+export default function Fav({
   hovered,
   label,
   Icon1,
 }: Props) {
   return (
     <motion.div
+    data-tone-press
       layout
-      className="flex items-center "
+      className="flex items-center group "
       transition={{
         layout: {
           type: "spring",
@@ -33,21 +34,15 @@ export default function Reload({
         },
       }}
     >
-      {/* Reload Icon */}
+     
       <motion.div
-        className="mr-2 flex items-center"
-        animate={{
-          rotate: hovered ? 360 : 0,
-        }}
-        transition={{
-          duration: 1,
-          ease: "linear",
-          repeat: hovered ? Infinity : 0,
-        }}
+        className="mr-2 flex items-center "
+       
       >
         <HugeiconsIcon
           icon={Icon1}
-          size={16}
+          size={18}
+          className="transition-colors duration-200 group-hover:fill-red-600  "
         />
       </motion.div>
 

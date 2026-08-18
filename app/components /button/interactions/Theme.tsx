@@ -18,7 +18,7 @@ interface Props {
   Icon2: IconSvgElement;
 }
 
-export default function GitHubStar({ hovered, label, Icon1, Icon2 }: Props) {
+export default function Theme({ hovered, label, Icon1, Icon2 }: Props) {
   return (
     <motion.div
       data-tone-tap

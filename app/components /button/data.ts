@@ -1,5 +1,6 @@
 import { ArrowRight02Icon, Download ,Setting07Icon,Like,CircleCheckBigIcon,GithubIcon,StarIcon,
-        SentIcon,Sent02Icon,Link03Icon,Search01Icon,Cancel01Icon,Delete02Icon,Moon02Icon,Sun02Icon,ReloadIcon
+        SentIcon,Sent02Icon,Link03Icon,Search01Icon,Cancel01Icon,Delete02Icon,Moon02Icon,Sun02Icon,ReloadIcon,
+        FavouriteIcon,CheckmarkBadge01Icon,CheckmarkBadge03Icon,AlarmClockIcon,AlarmClockOffIcon
 } from "@hugeicons/core-free-icons";
 
 
@@ -16,6 +17,9 @@ export type InteractionType =
   |"Delete"
   |"theme"
   |"reload"
+  |"Fav"
+  |"verifly"
+  |"Time"
 
 export interface ButtonConfig {
   id: number;
@@ -187,5 +191,47 @@ export const buttons:ButtonConfig[] = [
     icon1Name: "ReloadIcon",
   },
 
+  {
+    id: 12,
+    category: "Button",
+    label: "Favorite",
+    dis: " Favorite transition with Color",
+
+    interactionType: "Fav",
+
+    icon1: FavouriteIcon,
+    icon1Name: "FavouriteIcon",
+  },
+
+
+  {
+  id:13,
+  category:"Button",
+  label:"Verifly ",
+  dis:"Verifly transition",
+
+  interactionType:"verifly",
+
+  icon1:CheckmarkBadge01Icon,
+  icon1Name:"CheckmarkBadge01Icon",
+
+  icon2:CheckmarkBadge03Icon,
+  icon2Name:"CheckmarkBadge03Icon"
+},
+
+{
+  id:14,
+  category:"Button",
+  label:"Time ",
+  dis:"Time transition",
+
+  interactionType:"Time",
+
+  icon1:AlarmClockIcon,
+  icon1Name:"AlarmClockIcon",
+
+  icon2:AlarmClockOffIcon,
+  icon2Name:"AlarmClockOffIcon"
+},
 
 ];
